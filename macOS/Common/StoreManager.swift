@@ -71,6 +71,9 @@ open class StoreManager {
                 default: NSAlert.showAlert(error: error)
                 }
                 completion?(false)
+            case let .deferred(purchase):
+                Log.debug("Purchase deferred: %@", purchase.productId)
+                completion?(false)
             }
         }
     }
