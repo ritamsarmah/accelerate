@@ -1,0 +1,79 @@
+:root {
+    color-scheme: light dark;
+    --accent-color: rgb(175, 82, 222);
+    --button-color: rgb(229, 229, 234);
+    --highlight-color: rgb(174, 174, 178);
+    --text-color: black;
+    --icon-filter: invert(0);
+}
+
+body {
+    margin: auto;
+    font-family: system-ui;
+    text-align: center;
+}
+
+/* Fixed width for iPad */
+.pad-popup {
+    width: 300px;
+}
+
+/* Use full view for iPhone */
+.phone-popup {
+    width: 100%;
+}
+
+#disabled-label {
+    margin: 24px 16px;
+}
+
+#rate-label {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#shortcut-grid {
+    padding: 0 9px 6px 6px;
+}
+
+.shortcut {
+    background-color: var(--button-color);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 12px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    user-select: none;
+    vertical-align: middle;
+    width: 100%;
+    white-space: nowrap;
+    -webkit-user-select: none;
+}
+
+.shortcut:active {
+    background-color: var(--highlight-color);
+}
+
+.shortcut-icon {
+    filter: var(--icon-filter);
+    height: 1em;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --accent-color: rgb(191, 90, 242);
+        --button-color: rgb(44, 44, 46);
+        --highlight-color: rgb(99, 99, 102);
+        --text-color: white;
+        --icon-filter: invert(1);
+    }
+}

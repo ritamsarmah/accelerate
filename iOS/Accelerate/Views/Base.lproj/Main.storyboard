@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EIw-Ku-yts">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--General-->
+        <scene sceneID="1Zr-SK-aah">
+            <objects>
+                <hostingController id="0hK-fG-b6M" customClass="GeneralViewController" customModule="Accelerate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="General" id="oUj-pC-Wjv">
+                        <imageReference key="image" image="gear" catalog="system"/>
+                    </tabBarItem>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwd-5V-gsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2393" y="706"/>
+        </scene>
+        <!--Shortcuts-->
+        <scene sceneID="lm9-UE-1FH">
+            <objects>
+                <hostingController id="QrG-lt-gPq" customClass="ShortcutListViewController" customModule="Accelerate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Shortcuts" image="play.circle" catalog="system" id="Uev-b3-92d"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2i2-3a-UsV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1716" y="706"/>
+        </scene>
+        <!--Blocklist-->
+        <scene sceneID="xsJ-KO-iyc">
+            <objects>
+                <hostingController id="zI6-dv-MFo" customClass="BlocklistViewController" customModule="Accelerate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Blocklist" image="hand.raised" catalog="system" id="RcZ-UO-hLx"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6lh-nH-ShS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1020" y="706"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="W3N-u7-zqb">
+            <objects>
+                <tabBarController id="EIw-Ku-yts" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gsN-k6-jA9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0hK-fG-b6M" kind="relationship" relationship="viewControllers" id="VhN-du-JKl"/>
+                        <segue destination="QrG-lt-gPq" kind="relationship" relationship="viewControllers" id="vpI-gN-kYP"/>
+                        <segue destination="zI6-dv-MFo" kind="relationship" relationship="viewControllers" id="dLh-60-ISB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yi3-ta-G7C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3117" y="706"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="hand.raised" catalog="system" width="128" height="128"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

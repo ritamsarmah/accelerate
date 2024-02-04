@@ -1,0 +1,45 @@
+{
+    "manifest_version": 2,
+    "default_locale": "en",
+
+    "name": "Accelerate",
+    "description": "Control video playback in Safari.",
+    "version": "1.0.2",
+
+    "icons": {
+        "48": "images/icons/icon-48.png",
+        "96": "images/icons/icon-96.png",
+        "128": "images/icons/icon-128.png",
+        "256": "images/icons/icon-256.png",
+        "512": "images/icons/icon-512.png"
+    },
+
+    "background": {
+        "scripts": ["logger.js", "background.js"],
+        "persistent": false
+    },
+
+    "content_scripts": [
+        {
+            "css": ["snackbar.css"],
+            "js": ["utils.js", "logger.js", "snackbar.js", "core.js", "inject.js"],
+            "matches": ["http://*/*", "https://*/*", "file:///*"]
+        }
+    ],
+
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icons/toolbar-icon-16.png",
+            "19": "images/icons/toolbar-icon-19.png",
+            "32": "images/icons/toolbar-icon-32.png",
+            "38": "images/icons/toolbar-icon-38.png"
+        }
+    },
+
+    "web_accessible_resources": ["images/snackbar/*"],
+
+    "permissions": ["<all_urls>", "nativeMessaging", "webNavigation"],
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Accelerate</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.Safari.extension</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).SafariExtensionHandler</string>
+		<key>SFSafariContentScript</key>
+		<array>
+			<dict>
+				<key>Script</key>
+				<string>utils.js</string>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>logger.js</string>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>snackbar.js</string>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>core.js</string>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>inject.js</string>
+			</dict>
+		</array>
+		<key>SFSafariContextMenu</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>0</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>1</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>2</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>3</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>4</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>5</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>6</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>7</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>8</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>9</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>10</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>11</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>12</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>13</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>14</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>15</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>16</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>17</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>18</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>19</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>20</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>21</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>22</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>23</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>24</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>25</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>26</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>27</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>28</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>29</string>
+				<key>Text</key>
+				<string>Accelerate Shortcut</string>
+			</dict>
+		</array>
+		<key>SFSafariStyleSheet</key>
+		<array>
+			<dict>
+				<key>Style Sheet</key>
+				<string>snackbar.css</string>
+			</dict>
+		</array>
+		<key>SFSafariToolbarItem</key>
+		<dict>
+			<key>Action</key>
+			<string>Command</string>
+			<key>Identifier</key>
+			<string>Button</string>
+			<key>Image</key>
+			<string>toolbar.pdf</string>
+			<key>Label</key>
+			<string>Accelerate</string>
+		</dict>
+		<key>SFSafariWebsiteAccess</key>
+		<dict>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2019 Ritam Sarmah. All rights reserved.</string>
+	<key>NSHumanReadableDescription</key>
+	<string>Control video playback in Safari. This extension never attempts to read your personal data.</string>
+</dict>
+</plist>

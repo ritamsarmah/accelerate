@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <script defer src="alpine.js"></script>
+        <script src="popup.js"></script>
+
+        <link rel="stylesheet" href="popup.css" />
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div
+            x-data
+            x-cloak
+            x-show="$store.initialized"
+            :class="$store.isTablet ? 'pad-popup' : 'phone-popup'"
+        >
+            <template x-if="!$store.allowed">
+                <div id="disabled-label">
+                    <b>Accelerate is disabled</b>
+                    <p>This webpage has been ignored by your blocklist.</p>
+                </div>
+            </template>
+
+            <template x-if="$store.allowed">
+                <div>
+                    <p
+                        x-text="'Speed: ' + parseFloat($store.rate.toFixed(2)) + 'x'"
+                        id="rate-label"
+                    ></p>
+                    <div id="shortcut-grid">
+                        <template
+                            x-for="shortcut in $store.shortcuts"
+                            :key="shortcut.id"
+                        >
+                            <button
+                                @click="triggerAction(shortcut)"
+                                class="shortcut"
+                            >
+                                <img
+                                    :src="getIcon(shortcut)"
+                                    class="shortcut-icon"
+                                />
+                                <span x-text="shortcut.description"></span>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </body>
+</html>

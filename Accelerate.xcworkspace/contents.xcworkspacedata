@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:macOS/Accelerate - macOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iOS/Accelerate - iOS.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:Common"
+      name = "Common">
+      <FileRef
+         location = "group:SnackbarLocation.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Log.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Extensions"
+      name = "Extensions">
+      <FileRef
+         location = "group:Defaults+Shared.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Defaults+Workaround.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Shortcut+Action.swift">
+      </FileRef>
+      <FileRef
+         location = "group:String+Extensions.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Web"
+      name = "Web">
+      <Group
+         location = "group:snackbar"
+         name = "snackbar">
+         <FileRef
+            location = "group:skip.svg">
+         </FileRef>
+         <FileRef
+            location = "group:unmute.svg">
+         </FileRef>
+         <FileRef
+            location = "group:play.svg">
+         </FileRef>
+         <FileRef
+            location = "group:backward.svg">
+         </FileRef>
+         <FileRef
+            location = "group:pip.svg">
+         </FileRef>
+         <FileRef
+            location = "group:mute.svg">
+         </FileRef>
+         <FileRef
+            location = "group:pause.svg">
+         </FileRef>
+         <FileRef
+            location = "group:forward.svg">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:core.js">
+      </FileRef>
+      <FileRef
+         location = "group:logger.js">
+      </FileRef>
+      <FileRef
+         location = "group:snackbar.js">
+      </FileRef>
+      <FileRef
+         location = "group:utils.js">
+      </FileRef>
+      <FileRef
+         location = "group:snackbar.css">
+      </FileRef>
+   </Group>
+</Workspace>

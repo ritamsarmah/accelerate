@@ -1,0 +1,23 @@
+//
+//  Defaults+Keys.swift
+//  Accelerate
+//
+//  Created by Ritam Sarmah on 5/5/19.
+//  Copyright © 2019 Ritam Sarmah. All rights reserved.
+//
+
+import Carbon
+import Defaults
+import Foundation
+
+extension Defaults {
+    static let suite = UserDefaults(suiteName: "XXYXWGAW9Y.group.Accelerate.v4")!
+}
+
+extension Defaults.Keys {
+    // Identifier of shortcut associated with the toolbar
+    static let toolbarShortcutIdentifier = Key<String?>("toolbarShortcut", default: "FF7BF0BE-5DDC-4FFE-84CF-F5056A993A1A", suite: Defaults.suite)
+
+    // Array of shortcut preference keys
+    static let allShortcutKeys: [Defaults.AnyKey] = [.shortcuts, .toolbarShortcutIdentifier]
+}
