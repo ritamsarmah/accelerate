@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "lineLength": 999,
+    "indentation": {
+        "spaces": 4
+    },
+    "lineBreakBeforeEachArgument": false,
+    "lineBreakBeforeEachGenericRequirement": false,
+    "prioritizeKeepingFunctionOutputTogether": false,
+    "respectsExistingLineBreaks": true,
+}
