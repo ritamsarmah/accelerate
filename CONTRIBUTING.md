@@ -14,23 +14,23 @@ Accelerate aims to support its features universally across a wide range of websi
 
 Before you begin, please ensure you have Xcode installed. Familiarity with Swift Package Manager (SPM) for dependency management and code formatting tools like [`swift-format`](https://github.com/apple/swift-format) and [`prettier`](https://prettier.io) is also beneficial. Accelerate is written using Swift and JavaScript.
 
+> NOTE: Remove any previous version of Accelerate installed from the App Store before running the project.
+
 1. Clone the repository:
 
-```
-$ git clone https://github.com/ritamsarmah/accelerate.git
-```
+    ```
+    $ git clone https://github.com/ritamsarmah/accelerate.git
+    ```
 
 2. Navigate to the project directory and open `Accelerate.xcworkspace` in Xcode. This workspace is used for both macOS and iOS projects. Here are descriptions for the key directories:
-- `macOS` - Project files for the macOS app and extension.
-- `iOS/` - Project files for the iOS app and extension.
-- `Common` and `Extensions/` - Swift files used by both macOS/iOS native apps.
-- `Web` - JavaScript files and resources used by both macOS/iOS web extensions.
+    - `macOS` - Project files for the macOS app and extension.
+    - `iOS` - Project files for the iOS app and extension.
+    - `Common` and `Extensions` - Swift files used by both macOS/iOS native apps.
+    - `Web` - JavaScript files and resources used by both macOS/iOS web extensions.
 
-> We recommend removing any previously installed version of Accelerate from the App Store before running the project.
+3. Build or run the scheme for the operating system you are targeting. Each scheme builds the native app and web extension together. Running the project will both open the app and install the extension for Safari. You will need to enable the extension from Safari's preferences on the first run.
 
-3. Build or run the scheme for the operating system you are targeting. Each scheme builds both the native app and web extension. Running the project will both open the app and install the extension for Safari. You will need to enable the extension from Safari's preferences on the first run.
-
-4. For developing the web extension, we recommend enabling Safari's developer tools from the preferences ( Advanced > Show features for web developers). This will add a **Develop** item to your menu bar that will give you options to debug, breakpoint, and view logs from the web extension on macOS or a connected iOS device.
+4. For web extension development, we recommend enabling Safari's developer tools from the preferences (Advanced > Show features for web developers). This adds a **Develop** menu bar item that will give you options to debug, breakpoint, and view logs from the web extension on macOS or a connected iOS device.
 
 ## Style Guide
 
