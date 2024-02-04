@@ -1,0 +1,27 @@
+name: Feature Request
+description: Request an enhancement
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        *Before requesting, search our [existing issues](https://github.com/ritamsarmah/accelerate/issues?q=is%3Aenhancement) to see if the feature has already been addressed.*
+  - type: textarea
+    id: desc
+    attributes:
+      label: "Feature Description"
+      description: "A detailed description of the suggested feature."
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: Which operating system is this feature for?
+      multiple: true
+      options:
+        - macOS
+        - iOS
+    validations:
+      required: true
+
