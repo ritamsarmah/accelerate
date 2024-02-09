@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        *Before reporting, search our [existing issues](https://github.com/ritamsarmah/accelerate/issues?q=is%3Abug) to see if the bug has already been addressed.*
+        *Before reporting, search our [existing issues](https://github.com/ritamsarmah/accelerate/issues?q=label%3Abug) to see if the bug has already been addressed.*
   - type: textarea
     id: desc
     attributes:
