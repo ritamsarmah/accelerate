@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -144,10 +143,23 @@
                                     <action selector="openPrivacy:" target="Voe-Tx-rLC" id="ZMX-hy-C8R"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Submit Feedback" id="x2B-3Q-S2N">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openIssues:" target="Voe-Tx-rLC" id="aeP-Sm-tW6"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Contact Support" id="nwA-JQ-t6c">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openContact:" target="Voe-Tx-rLC" id="Sh6-GF-eIz"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VeI-qV-cdD"/>
+                            <menuItem title="GitHub" id="nRd-EH-qWd" userLabel="GitHub">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openGitHub:" target="Voe-Tx-rLC" id="pDg-GM-Xc4"/>
                                 </connections>
                             </menuItem>
                         </items>

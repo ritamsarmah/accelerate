@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func openHelp(_: NSMenuItem) {
-        let url = URL(string: "https://ritam.me/projects/accelerate/faq")!
+        let url = URL(string: "https://ritam.me/projects/accelerate/faq-mac")!
         NSWorkspace.shared.open(url)
     }
 
@@ -80,8 +80,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url)
     }
 
+    @IBAction func openIssues(_: NSMenuItem) {
+        let url = URL(string: "https://github.com/ritamsarmah/accelerate/issues")!
+        NSWorkspace.shared.open(url)
+    }
+
     @IBAction func openContact(_: NSMenuItem) {
         let url = URL(string: "mailto:hello@ritam.me")!
+        NSWorkspace.shared.open(url)
+    }
+    
+    @IBAction func openGitHub(_: NSMenuItem) {
+        let url = URL(string: "https://github.com/ritamsarmah/accelerate")!
         NSWorkspace.shared.open(url)
     }
 }
