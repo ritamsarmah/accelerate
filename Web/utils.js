@@ -8,10 +8,16 @@
 
 /** Determines if current active element has editable text. */
 function activeElementHasEditableText() {
+    let activeElement = document.activeElement;
+    if (activeElement == null) return false;
+
+    // Matches with standard "INPUT" and "TEXTAREA" node names, as well as
+    // common keywords for custom input elements (e.g., Reddit search bar)
+    let keywords = ["INPUT", "TEXT", "SEARCH"];
+
     return (
-        document.activeElement.nodeName === "INPUT" ||
-        document.activeElement.nodeName === "TEXTAREA" ||
-        document.activeElement.isContentEditable
+        activeElement.isContentEditable ||
+        keywords.some(s => activeElement.nodeName.includes(s))
     );
 }
 
