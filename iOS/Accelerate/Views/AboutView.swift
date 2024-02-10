@@ -34,9 +34,10 @@ struct AboutView: View {
             .listRowBackground(Color.clear)
 
             Section {
-                Link("Contact Support", destination: URL(string: "mailto:hello@ritam.me")!)
+                Link("Help", destination: URL(string: "https://ritam.me/projects/accelerate/faq-ios")!)
                 Link("Privacy Policy", destination: URL(string: "https://ritam.me/projects/accelerate/privacy")!)
-                Link("FAQ", destination: URL(string: "https://ritam.me/projects/accelerate/faq-ios")!)
+                Link("Submit Feedback", destination: URL(string: "https://github.com/ritamsarmah/accelerate/issues")!)
+                Link("Contact Support", destination: URL(string: "mailto:hello@ritam.me")!)
             }
 
             Section {
