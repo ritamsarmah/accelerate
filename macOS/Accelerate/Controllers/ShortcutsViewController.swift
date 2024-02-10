@@ -48,7 +48,7 @@ class ShortcutsViewController: NSViewController, PreferencePane {
 
         static let cell = NSUserInterfaceItemIdentifier(rawValue: "ShortcutCell")
     }
-    
+
     override func loadView() {
         super.loadView()
 
@@ -61,7 +61,6 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         shortcutTableView = createShortcutTableView()
         restoreButton = createButton(title: "Restore Defaults", action: #selector(restoreDefaults(_:)), accessibilityLabel: "Restore defaults")
 
-        // Grid view
         gridView = NSGridView(views: [
             [toolbarShortcutLabel, toolbarShortcutButton],
             [NSGridCell.emptyContentView, toolbarShortcutDescriptionLabel],
@@ -75,11 +74,9 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         gridView.mergeCells(inHorizontalRange: NSRange(0..<2), verticalRange: NSRange(2..<3))
         gridView.mergeCells(inHorizontalRange: NSRange(0..<2), verticalRange: NSRange(3..<4))
 
-        // Add subviews
         view.addSubview(gridView)
         view.addSubview(restoreButton)
 
-        // Layout constraints
         let bindings = constructViewBindings()
 
         let constraints = [
@@ -98,7 +95,7 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         // NOTE: Registering this observer will immediately call it
         shortcutsObserver = Defaults.observe(.shortcuts) { _ in self.updateViews() }
     }
-    
+
     private func createShortcutTableView() -> EditableTableView {
         let shortcutTableView = EditableTableView()
         shortcutTableView.maximumNumberOfRows = Shortcut.maximumShortcuts
@@ -108,7 +105,7 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         shortcutTableView.tableView.register(nil, forIdentifier: Identifier.cell)
         shortcutTableView.tableView.registerForDraggedTypes([.string])
         shortcutTableView.setAccessibilityLabel("Shortcuts")
-        
+
         // Columns
 
         let isEnabledTableViewColumn = NSTableColumn(identifier: Identifier.isEnabledColumn)
@@ -134,9 +131,9 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         optionsTableViewColumn.headerToolTip = "Additional options for each shortcut"
         optionsTableViewColumn.width = 60
         shortcutTableView.tableView.addTableColumn(optionsTableViewColumn)
-       
+
         // Actions
-        
+
         shortcutTableView.addAction = { [unowned self] _ in
             presentAsSheet(ShortcutViewController())
         }
@@ -160,7 +157,7 @@ class ShortcutsViewController: NSViewController, PreferencePane {
             viewController.shortcut = Defaults[.shortcuts][selectedRow]
             presentAsSheet(viewController)
         }
-        
+
         return shortcutTableView
     }
 
@@ -180,7 +177,7 @@ class ShortcutsViewController: NSViewController, PreferencePane {
             self.toolbarShortcutButton.selectItem(at: (Defaults[.shortcuts].toolbarShortcutIndex ?? -1) + 1)
         }
     }
-    
+
     @objc private func updateToolbarShortcutIdentifier(_ sender: NSPopUpButton) {
         if sender.indexOfSelectedItem == 0 {
             Defaults[.toolbarShortcutIdentifier] = nil

@@ -93,9 +93,9 @@ extension NSViewController {
 
         return bindings
     }
-    
+
     // MARK: UI Helpers
-    
+
     func createLabeledPopupButton(title: String, action: Selector) -> (NSTextField, NSPopUpButton) {
         let label = createLabel(title: title)
 
@@ -103,10 +103,10 @@ extension NSViewController {
         button.target = self
         button.action = action
         button.setAccessibilityLabel(title)
-        
+
         return (label, button)
     }
-    
+
     func createLabeledTextField(title: String, action: Selector) -> (NSTextField, NSTextField) {
         let label = createLabel(title: title)
 
@@ -125,7 +125,7 @@ extension NSViewController {
         label.alignment = .right
         return label
     }
-    
+
     func createDescriptionLabel(withText text: String) -> NSTextField {
         let descriptionLabel = NSTextField(labelWithString: text)
         descriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)

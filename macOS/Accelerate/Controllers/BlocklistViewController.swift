@@ -47,21 +47,18 @@ class BlocklistViewController: NSViewController, PreferencePane {
         // We're not using auto-layout, so need to set a preferred content size for Preferences window to show
         preferredContentSize = .zero
 
-        // Description label
         descriptionLabel = NSTextField(labelWithString: "Blocked websites are ignored by default. A rule like \"example.com\"\ndisables Accelerate on all URLs starting with that domain. Use the asterisk\nwildcard to represent zero or more of any character, e.g., *.example.com\nmatches \"my.example.com\" and \"test.example.com\".")
         descriptionLabel.maximumNumberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
         descriptionLabel.alignment = .center
         descriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
 
-        // Invert blocklist checkbox
         invertBlocklistCheckBox = NSButton(checkboxWithTitle: "Invert blocklist (enable extension only on these websites)", target: nil, action: #selector(updateInvertBlocklist(_:)))
         invertBlocklistCheckBox.state = Defaults[.isBlocklistInverted] ? .on : .off
         invertBlocklistCheckBox.toolTip = "Invert blocklist to enable extension only on these websites"
         invertBlocklistCheckBox.target = self
         invertBlocklistCheckBox.action = #selector(updateInvertBlocklist(_:))
 
-        // Blocklist table view
         blocklistTableView = EditableTableView()
         blocklistTableView.tableView.dataSource = self
         blocklistTableView.tableView.delegate = self
@@ -80,15 +77,12 @@ class BlocklistViewController: NSViewController, PreferencePane {
 
         bindTableViewActions()
 
-        // Stack view
         stackView = NSStackView(views: [descriptionLabel, invertBlocklistCheckBox, blocklistTableView])
         stackView.orientation = .vertical
         stackView.spacing = 16
 
-        // Add subviews
         view.addSubview(stackView)
 
-        // Layout constraints
         let bindings = constructViewBindings()
 
         let constraints = [

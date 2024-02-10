@@ -70,7 +70,6 @@ class GeneralViewController: NSViewController, PreferencePane {
         restoreButton = createButton(title: "Restore Defaults", action: #selector(restoreDefaults(_:)), accessibilityLabel: "Restore defaults")
         helpButton = NSButton.helpButton(target: self, action: #selector(openHelp(_:)))
 
-        // Grid view
         gridView = NSGridView(views: [
             [snackbarLocationLabel, snackbarLocationButton],
             [NSGridCell.emptyContentView, snackbarDescriptionLabel],
@@ -92,16 +91,13 @@ class GeneralViewController: NSViewController, PreferencePane {
 
         gridView.setContentHuggingPriority(.required, for: .vertical)
 
-        // Stack view
         buttonStackView = NSStackView(views: [tipButton, restoreButton, helpButton])
         buttonStackView.orientation = .horizontal
         buttonStackView.setContentHuggingPriority(.required, for: .vertical)
 
-        // Add subviews
         view.addSubview(gridView)
         view.addSubview(buttonStackView)
 
-        // Layout constraints
         bindings = constructViewBindings()
 
         let constraints = [

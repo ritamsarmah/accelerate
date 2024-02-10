@@ -71,12 +71,12 @@ class ShortcutViewController: NSViewController {
     var actionButton: NSPopUpButton!
 
     var shortcutLabel: NSTextField!
-    var shortcutView: MASShortcutView!
     var shortcutDescriptionLabel: NSTextField!
+    var shortcutView: MASShortcutView!
 
     var valueLabel: NSTextField!
-    var valueTextField: NSTextField!
     var valueDescriptionLabel: NSTextField!
+    var valueTextField: NSTextField!
 
     var checkboxStackView: NSStackView!
     var showSnackbarCheckbox: NSButton!
@@ -103,76 +103,43 @@ class ShortcutViewController: NSViewController {
         // We're not using auto-layout, so need to set a preferred content size for Preferences window to show
         preferredContentSize = .zero
 
-        // Action label
-        actionLabel = NSTextField(labelWithString: "Shortcut action:")
-        actionLabel.alignment = .right
-
-        // Action button
-        actionButton = NSPopUpButton()
+        (actionLabel, actionButton) = createLabeledPopupButton(title: "Shortcut action", action: #selector(updateAction(_:)))
         actionButton.addItems(withTitles: Shortcut.Action.allCases.map(\.defaultDescription))
-        actionButton.target = self
-        actionButton.action = #selector(updateAction(_:))
 
-        // Shortcut label
-        shortcutLabel = NSTextField(labelWithString: "Key combination:")
-        shortcutLabel.alignment = .right
+        shortcutLabel = createLabel(title: "Key combination")
+        shortcutDescriptionLabel = createDescriptionLabel(withText: "Enter single key or with modifier keys")
 
-        // Shortcut view
         shortcutView = MASShortcutView()
         shortcutView.style = .default
         shortcutView.shortcutValidator = ShortcutValidator()
         shortcutView.shortcutValueChange = { _ in self.updateViews() }
 
-        // TODO: We support shortcuts that have the same keycombo (but need to add a warning icon and message underneath in the UI!)
-
-        // Shortcut description label
-        shortcutDescriptionLabel = NSTextField(labelWithString: "Enter single key or with modifier keys")
-        shortcutDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
-
-        // Value label
         valueLabel = NSTextField(labelWithString: "")
+        valueDescriptionLabel = createDescriptionLabel(withText: "")
 
-        // Value textfield
         valueTextField = NSTextField()
         valueTextField.refusesFirstResponder = true
         valueTextField.delegate = self
 
-        // Value description label
-        valueDescriptionLabel = NSTextField(labelWithString: "")
-        valueDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
-
-        // showSnackbar checkbox
         showSnackbarCheckbox = NSButton(checkboxWithTitle: "Show notification", target: nil, action: nil)
-
-        // showInContextMenu checkbox
         showInContextMenuCheckbox = NSButton(checkboxWithTitle: "Show in right-click menu", target: nil, action: nil)
-
-        // isGlobal checkbox
         isGlobalCheckbox = NSButton(checkboxWithTitle: "Enable global shortcut", target: nil, action: nil)
         isGlobalCheckbox.toolTip = "Shortcuts with modifier keys can be triggered outside of Safari."
 
-        // Checkbox stack view
         checkboxStackView = NSStackView(views: [showSnackbarCheckbox, showInContextMenuCheckbox, isGlobalCheckbox])
         checkboxStackView.orientation = .vertical
         checkboxStackView.alignment = .leading
         checkboxStackView.setContentHuggingPriority(.required, for: .vertical)
 
-        // Delete button
         deleteButton = NSButton(title: "Delete", target: self, action: #selector(delete))
         deleteButton.isHidden = shortcut == nil
 
-        // Cancel button
         cancelButton = NSButton(title: "Cancel", target: self, action: #selector(cancel))
-
-        // Save button
         saveButton = NSButton(title: "Save", target: self, action: #selector(save(_:)))
-        // TODO: Add behavior to show alert or highlight missing fields when user tries to click while disabled
 
-        // Button stack view
         buttonStackView = NSStackView(views: [cancelButton, saveButton])
         buttonStackView.orientation = .horizontal
 
-        // Grid view
         gridView = NSGridView(views: [
             [actionLabel, actionButton],
             [shortcutLabel, shortcutView],
@@ -195,14 +162,10 @@ class ShortcutViewController: NSViewController {
         gridView.cell(atColumnIndex: 0, rowIndex: GridRow.value).yPlacement = .center  // value label
         gridView.cell(atColumnIndex: 1, rowIndex: GridRow.checkbox).yPlacement = .top  // checkbox
 
-        //        gridView.setContentHuggingPriority(.required, for: .vertical)
-
-        // Add subviews
         view.addSubview(gridView)
         view.addSubview(deleteButton)
         view.addSubview(buttonStackView)
 
-        // Layout constraints
         let bindings = constructViewBindings()
 
         let constraints = [
