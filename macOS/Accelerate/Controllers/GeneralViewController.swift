@@ -57,16 +57,10 @@ class GeneralViewController: NSViewController, PreferencePane {
         // We're not using auto-layout, so need to set a preferred content size for Preferences window to show
         preferredContentSize = .zero
 
-        snackbarLocationLabel = createLabel(title: "Notification location")
-
-        snackbarLocationButton = NSPopUpButton()
+        (snackbarLocationLabel, snackbarLocationButton) = createLabeledPopupButton(title: "Notification location", action: #selector(updateSnackbarLocation))
         snackbarLocationButton.addItems(withTitles: SnackbarLocation.allCases.map(\.description))
-        snackbarLocationButton.target = self
-        snackbarLocationButton.action = #selector(updateSnackbarLocation)
-        snackbarLocationButton.setAccessibilityLabel("Notification location")
 
-        snackbarDescriptionLabel = NSTextField(labelWithString: "Each shortcut must also have its\nnotification enabled to show.")
-        snackbarDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+        snackbarDescriptionLabel = createDescriptionLabel(withText: "Each shortcut must also have its\nnotification enabled to show.")
 
         (defaultRateLabel, defaultRateTextField) = createLabeledTextField(title: "Default playback speed", action: #selector(updateDefaultRate))
         (minimumRateLabel, minimumRateTextField) = createLabeledTextField(title: "Minimum playback speed", action: #selector(updateMinimumRate))
@@ -134,31 +128,6 @@ class GeneralViewController: NSViewController, PreferencePane {
         defaultRateTextField.doubleValue = Defaults[.defaultRate]
         minimumRateTextField.doubleValue = Defaults[.minimumRate]
         maximumRateTextField.doubleValue = Defaults[.maximumRate]
-    }
-
-    private func createLabeledTextField(title: String, action: Selector) -> (NSTextField, NSTextField) {
-        let label = createLabel(title: title)
-
-        let textField = NSTextField()
-        textField.formatter = Shortcut.Action.rateFormatter
-        textField.refusesFirstResponder = true
-        textField.target = self
-        textField.action = action
-        textField.setAccessibilityLabel(title)
-
-        return (label, textField)
-    }
-
-    private func createLabel(title: String) -> NSTextField {
-        let label = NSTextField(labelWithString: "\(title):")
-        label.alignment = .right
-        return label
-    }
-
-    func createButton(title: String, action: Selector, accessibilityLabel: String) -> NSButton {
-        let button = NSButton(title: title, target: self, action: action)
-        button.setAccessibilityLabel(accessibilityLabel)
-        return button
     }
 
     override func viewDidLoad() {

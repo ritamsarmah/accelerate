@@ -93,6 +93,51 @@ extension NSViewController {
 
         return bindings
     }
+    
+    // MARK: UI Helpers
+    
+    func createLabeledPopupButton(title: String, action: Selector) -> (NSTextField, NSPopUpButton) {
+        let label = createLabel(title: title)
+
+        let button = NSPopUpButton()
+        button.target = self
+        button.action = action
+        button.setAccessibilityLabel(title)
+        
+        return (label, button)
+    }
+    
+    func createLabeledTextField(title: String, action: Selector) -> (NSTextField, NSTextField) {
+        let label = createLabel(title: title)
+
+        let textField = NSTextField()
+        textField.formatter = Shortcut.Action.rateFormatter
+        textField.refusesFirstResponder = true
+        textField.target = self
+        textField.action = action
+        textField.setAccessibilityLabel(title)
+
+        return (label, textField)
+    }
+
+    func createLabel(title: String) -> NSTextField {
+        let label = NSTextField(labelWithString: "\(title):")
+        label.alignment = .right
+        return label
+    }
+    
+    func createDescriptionLabel(withText text: String) -> NSTextField {
+        let descriptionLabel = NSTextField(labelWithString: text)
+        descriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+        return descriptionLabel
+    }
+
+    func createButton(title: String, action: Selector, accessibilityLabel: String) -> NSButton {
+        let button = NSButton(title: title, target: self, action: action)
+        button.setAccessibilityLabel(accessibilityLabel)
+        return button
+    }
+
 }
 
 extension [Shortcut] {

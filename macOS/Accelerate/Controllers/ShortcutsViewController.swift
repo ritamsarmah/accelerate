@@ -48,69 +48,18 @@ class ShortcutsViewController: NSViewController, PreferencePane {
 
         static let cell = NSUserInterfaceItemIdentifier(rawValue: "ShortcutCell")
     }
-
+    
     override func loadView() {
         super.loadView()
 
         // We're not using auto-layout, so need to set a preferred content size for Preferences window to show
         preferredContentSize = .zero
 
-        // Toolbar shortcut label
-        toolbarShortcutLabel = NSTextField(labelWithString: "Toolbar button action:")
-        toolbarShortcutLabel.alignment = .right
-
-        // Toolbar shortcut button
-        toolbarShortcutButton = NSPopUpButton()
-        toolbarShortcutButton.target = self
-        toolbarShortcutButton.action = #selector(updateToolbarShortcutIdentifier(_:))
-        toolbarShortcutButton.setAccessibilityLabel("Toolbar Button Action")
-
-        // Toolbar shortcut description label
-        toolbarShortcutDescriptionLabel = NSTextField(labelWithString: "This action is triggered by clicking the button\n for Accelerate in the Safari toolbar.")
-        toolbarShortcutDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
-
-        // Shortcut table view description
-        shortcutTableViewDescriptionLabel = NSTextField(labelWithString: "Click Add (+) to create a shortcut. To edit shortcut options, double-click it.")
-        shortcutTableViewDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
-
-        // Shortcut table view
-        shortcutTableView = EditableTableView()
-        shortcutTableView.maximumNumberOfRows = Shortcut.maximumShortcuts
-        shortcutTableView.tableView.dataSource = self
-        shortcutTableView.tableView.delegate = self
-        shortcutTableView.tableView.usesAlternatingRowBackgroundColors = true
-        shortcutTableView.tableView.register(nil, forIdentifier: Identifier.cell)
-        shortcutTableView.tableView.registerForDraggedTypes([.string])
-        shortcutTableView.setAccessibilityLabel("Shortcuts")
-
-        let isEnabledTableViewColumn = NSTableColumn(identifier: Identifier.isEnabledColumn)
-        isEnabledTableViewColumn.title = ""
-        isEnabledTableViewColumn.headerToolTip = "Select to enable shortcut"
-        isEnabledTableViewColumn.width = NSButton.untitledCheckbox().frame.width + 24
-        shortcutTableView.tableView.addTableColumn(isEnabledTableViewColumn)
-
-        let actionTableViewColumn = NSTableColumn(identifier: Identifier.actionColumn)
-        actionTableViewColumn.title = "Action"
-        actionTableViewColumn.headerToolTip = "The action triggered by the shortcut"
-        actionTableViewColumn.width = 170
-        shortcutTableView.tableView.addTableColumn(actionTableViewColumn)
-
-        let keyComboTableViewColumn = NSTableColumn(identifier: Identifier.keyComboColumn)
-        keyComboTableViewColumn.title = "Shortcut"
-        keyComboTableViewColumn.headerToolTip = "The key combination that triggers the action"
-        keyComboTableViewColumn.width = 60
-        shortcutTableView.tableView.addTableColumn(keyComboTableViewColumn)
-
-        let optionsTableViewColumn = NSTableColumn(identifier: Identifier.optionsColumn)
-        optionsTableViewColumn.title = "Options"
-        optionsTableViewColumn.headerToolTip = "Additional options for each shortcut"
-        optionsTableViewColumn.width = 60
-        shortcutTableView.tableView.addTableColumn(optionsTableViewColumn)
-
-        bindTableViewActions()
-
-        // Restore button
-        restoreButton = NSButton(title: "Restore Defaults", target: self, action: #selector(restoreDefaults(_:)))
+        (toolbarShortcutLabel, toolbarShortcutButton) = createLabeledPopupButton(title: "Toolbar button action", action: #selector(updateToolbarShortcutIdentifier(_:)))
+        toolbarShortcutDescriptionLabel = createDescriptionLabel(withText: "This action is triggered by clicking the button\n for Accelerate in the Safari toolbar.")
+        shortcutTableViewDescriptionLabel = createDescriptionLabel(withText: "Click Add (+) to create a shortcut. To edit shortcut options, double-click it.")
+        shortcutTableView = createShortcutTableView()
+        restoreButton = createButton(title: "Restore Defaults", action: #selector(restoreDefaults(_:)), accessibilityLabel: "Restore defaults")
 
         // Grid view
         gridView = NSGridView(views: [
@@ -149,8 +98,45 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         // NOTE: Registering this observer will immediately call it
         shortcutsObserver = Defaults.observe(.shortcuts) { _ in self.updateViews() }
     }
+    
+    private func createShortcutTableView() -> EditableTableView {
+        let shortcutTableView = EditableTableView()
+        shortcutTableView.maximumNumberOfRows = Shortcut.maximumShortcuts
+        shortcutTableView.tableView.dataSource = self
+        shortcutTableView.tableView.delegate = self
+        shortcutTableView.tableView.usesAlternatingRowBackgroundColors = true
+        shortcutTableView.tableView.register(nil, forIdentifier: Identifier.cell)
+        shortcutTableView.tableView.registerForDraggedTypes([.string])
+        shortcutTableView.setAccessibilityLabel("Shortcuts")
+        
+        // Columns
 
-    private func bindTableViewActions() {
+        let isEnabledTableViewColumn = NSTableColumn(identifier: Identifier.isEnabledColumn)
+        isEnabledTableViewColumn.title = ""
+        isEnabledTableViewColumn.headerToolTip = "Select to enable shortcut"
+        isEnabledTableViewColumn.width = NSButton.untitledCheckbox().frame.width + 24
+        shortcutTableView.tableView.addTableColumn(isEnabledTableViewColumn)
+
+        let actionTableViewColumn = NSTableColumn(identifier: Identifier.actionColumn)
+        actionTableViewColumn.title = "Action"
+        actionTableViewColumn.headerToolTip = "The action triggered by the shortcut"
+        actionTableViewColumn.width = 170
+        shortcutTableView.tableView.addTableColumn(actionTableViewColumn)
+
+        let keyComboTableViewColumn = NSTableColumn(identifier: Identifier.keyComboColumn)
+        keyComboTableViewColumn.title = "Shortcut"
+        keyComboTableViewColumn.headerToolTip = "The key combination that triggers the action"
+        keyComboTableViewColumn.width = 60
+        shortcutTableView.tableView.addTableColumn(keyComboTableViewColumn)
+
+        let optionsTableViewColumn = NSTableColumn(identifier: Identifier.optionsColumn)
+        optionsTableViewColumn.title = "Options"
+        optionsTableViewColumn.headerToolTip = "Additional options for each shortcut"
+        optionsTableViewColumn.width = 60
+        shortcutTableView.tableView.addTableColumn(optionsTableViewColumn)
+       
+        // Actions
+        
         shortcutTableView.addAction = { [unowned self] _ in
             presentAsSheet(ShortcutViewController())
         }
@@ -174,6 +160,8 @@ class ShortcutsViewController: NSViewController, PreferencePane {
             viewController.shortcut = Defaults[.shortcuts][selectedRow]
             presentAsSheet(viewController)
         }
+        
+        return shortcutTableView
     }
 
     private func updateViews() {
@@ -192,7 +180,7 @@ class ShortcutsViewController: NSViewController, PreferencePane {
             self.toolbarShortcutButton.selectItem(at: (Defaults[.shortcuts].toolbarShortcutIndex ?? -1) + 1)
         }
     }
-
+    
     @objc private func updateToolbarShortcutIdentifier(_ sender: NSPopUpButton) {
         if sender.indexOfSelectedItem == 0 {
             Defaults[.toolbarShortcutIdentifier] = nil
