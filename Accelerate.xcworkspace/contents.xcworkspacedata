@@ -30,7 +30,7 @@
          location = "group:Shortcut+Action.swift">
       </FileRef>
       <FileRef
-         location = "group:String+Extensions.swift">
+         location = "group:Swift+Extensions.swift">
       </FileRef>
    </Group>
    <Group

@@ -7,26 +7,6 @@
 
 import UIKit
 
-extension Array {
-    mutating func remove(at indices: [Int]) {
-        Set(indices)
-            .sorted(by: >)
-            .forEach { self.remove(at: $0) }
-    }
-}
-
-extension RandomAccessCollection {
-    /// Returns the element at the specified index if it is within bounds, otherwise nil.
-    /// - complexity: O(1)
-    public subscript(safe index: Index) -> Element? {
-        guard index >= startIndex, index < endIndex else {
-            return nil
-        }
-        return self[index]
-    }
-
-}
-
 extension UIKeyModifierFlags: Decodable {
     public init(from decoder: Decoder) throws {
         try self.init(rawValue: decoder.singleValueContainer().decode(Int.self))

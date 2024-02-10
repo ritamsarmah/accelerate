@@ -55,26 +55,45 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         // We're not using auto-layout, so need to set a preferred content size for Preferences window to show
         preferredContentSize = .zero
 
-        // Toolbar shortcut label
-        toolbarShortcutLabel = NSTextField(labelWithString: "Toolbar button action:")
-        toolbarShortcutLabel.alignment = .right
+        (toolbarShortcutLabel, toolbarShortcutButton) = createLabeledPopupButton(title: "Toolbar button action", action: #selector(updateToolbarShortcutIdentifier(_:)))
+        toolbarShortcutDescriptionLabel = createDescriptionLabel(withText: "This action is triggered by clicking the button\n for Accelerate in the Safari toolbar.")
+        shortcutTableViewDescriptionLabel = createDescriptionLabel(withText: "Click Add (+) to create a shortcut. To edit shortcut options, double-click it.")
+        shortcutTableView = createShortcutTableView()
+        restoreButton = createButton(title: "Restore Defaults", action: #selector(restoreDefaults(_:)), accessibilityLabel: "Restore defaults")
 
-        // Toolbar shortcut button
-        toolbarShortcutButton = NSPopUpButton()
-        toolbarShortcutButton.target = self
-        toolbarShortcutButton.action = #selector(updateToolbarShortcutIdentifier(_:))
-        toolbarShortcutButton.setAccessibilityLabel("Toolbar Button Action")
+        gridView = NSGridView(views: [
+            [toolbarShortcutLabel, toolbarShortcutButton],
+            [NSGridCell.emptyContentView, toolbarShortcutDescriptionLabel],
+            [shortcutTableViewDescriptionLabel, NSGridCell.emptyContentView],
+            [shortcutTableView, NSGridCell.emptyContentView],
+        ])
 
-        // Toolbar shortcut description label
-        toolbarShortcutDescriptionLabel = NSTextField(labelWithString: "This action is triggered by clicking the button\n for Accelerate in the Safari toolbar.")
-        toolbarShortcutDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+        gridView.columnSpacing = 8
+        gridView.column(at: 0).xPlacement = .trailing
+        gridView.row(at: 1).bottomPadding = 16
+        gridView.mergeCells(inHorizontalRange: NSRange(0..<2), verticalRange: NSRange(2..<3))
+        gridView.mergeCells(inHorizontalRange: NSRange(0..<2), verticalRange: NSRange(3..<4))
 
-        // Shortcut table view description
-        shortcutTableViewDescriptionLabel = NSTextField(labelWithString: "Click Add (+) to create a shortcut. To edit shortcut options, double-click it.")
-        shortcutTableViewDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+        view.addSubview(gridView)
+        view.addSubview(restoreButton)
 
-        // Shortcut table view
-        shortcutTableView = EditableTableView()
+        addVisualConstraints([
+            "H:|-(>=32)-[gridView]-(>=32)-|",
+            "V:[shortcutTableView(256)]",
+            "V:|-[gridView]-|",
+            "H:[restoreButton]-(>=32)-|",
+            "V:[restoreButton]-|",
+        ])
+
+        gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        // Add observer for changes to shortcuts
+        // NOTE: Registering this observer will immediately call it
+        shortcutsObserver = Defaults.observe(.shortcuts) { _ in self.updateViews() }
+    }
+
+    private func createShortcutTableView() -> EditableTableView {
+        let shortcutTableView = EditableTableView()
         shortcutTableView.maximumNumberOfRows = Shortcut.maximumShortcuts
         shortcutTableView.tableView.dataSource = self
         shortcutTableView.tableView.delegate = self
@@ -82,6 +101,8 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         shortcutTableView.tableView.register(nil, forIdentifier: Identifier.cell)
         shortcutTableView.tableView.registerForDraggedTypes([.string])
         shortcutTableView.setAccessibilityLabel("Shortcuts")
+
+        // Columns
 
         let isEnabledTableViewColumn = NSTableColumn(identifier: Identifier.isEnabledColumn)
         isEnabledTableViewColumn.title = ""
@@ -107,50 +128,8 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         optionsTableViewColumn.width = 60
         shortcutTableView.tableView.addTableColumn(optionsTableViewColumn)
 
-        bindTableViewActions()
+        // Actions
 
-        // Restore button
-        restoreButton = NSButton(title: "Restore Defaults", target: self, action: #selector(restoreDefaults(_:)))
-
-        // Grid view
-        gridView = NSGridView(views: [
-            [toolbarShortcutLabel, toolbarShortcutButton],
-            [NSGridCell.emptyContentView, toolbarShortcutDescriptionLabel],
-            [shortcutTableViewDescriptionLabel, NSGridCell.emptyContentView],
-            [shortcutTableView, NSGridCell.emptyContentView],
-        ])
-
-        gridView.columnSpacing = 8
-        gridView.column(at: 0).xPlacement = .trailing
-        gridView.row(at: 1).bottomPadding = 16
-        gridView.mergeCells(inHorizontalRange: NSRange(0..<2), verticalRange: NSRange(2..<3))
-        gridView.mergeCells(inHorizontalRange: NSRange(0..<2), verticalRange: NSRange(3..<4))
-
-        // Add subviews
-        view.addSubview(gridView)
-        view.addSubview(restoreButton)
-
-        // Layout constraints
-        let bindings = constructViewBindings()
-
-        let constraints = [
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=32)-[gridView]-(>=32)-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[shortcutTableView(256)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-[gridView]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[restoreButton]-(>=32)-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[restoreButton]-|", options: [], metrics: nil, views: bindings),
-        ]
-
-        constraints.forEach { view.addConstraints($0) }
-
-        gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-        // Add observer for changes to shortcuts
-        // NOTE: Registering this observer will immediately call it
-        shortcutsObserver = Defaults.observe(.shortcuts) { _ in self.updateViews() }
-    }
-
-    private func bindTableViewActions() {
         shortcutTableView.addAction = { [unowned self] _ in
             presentAsSheet(ShortcutViewController())
         }
@@ -174,6 +153,8 @@ class ShortcutsViewController: NSViewController, PreferencePane {
             viewController.shortcut = Defaults[.shortcuts][selectedRow]
             presentAsSheet(viewController)
         }
+
+        return shortcutTableView
     }
 
     private func updateViews() {
@@ -295,24 +276,23 @@ extension ShortcutsViewController: NSTableViewDataSource, NSTableViewDelegate {
             return textField
 
         case Identifier.optionsColumn:
-            let bellImage = NSImage(named: .bell)!.tinted(if: shortcut.showSnackbar)
-            let contextualMenuImage = NSImage(named: .contextualMenu)!.tinted(if: shortcut.showInContextMenu)
-            let globeImage = NSImage(named: .globe)!.tinted(if: shortcut.isGlobal)
+            let images = [
+                NSImage(named: .bell)!.tinted(if: shortcut.showSnackbar),
+                NSImage(named: .contextualMenu)!.tinted(if: shortcut.showInContextMenu),
+                NSImage(named: .globe)!.tinted(if: shortcut.isGlobal),
+            ]
 
             let stackView = tableView.dequeueReusableView(withIdentifier: Identifier.optionsColumn, for: row) {
-                let bellImageView = NSImageView(image: bellImage)
-                let contextualMenuView = NSImageView(image: contextualMenuImage)
-                let globeImageView = NSImageView(image: globeImage)
-
-                let stackView = NSStackView(views: [bellImageView, contextualMenuView, globeImageView])
+                let imageViews = images.map { NSImageView(image: $0) }
+                let stackView = NSStackView(views: imageViews)
                 stackView.orientation = .horizontal
                 stackView.spacing = 8
                 return stackView
             }
 
-            (stackView.views[0] as! NSImageView).image = bellImage
-            (stackView.views[1] as! NSImageView).image = contextualMenuImage
-            (stackView.views[2] as! NSImageView).image = globeImage
+            let imageViews = stackView.views.map { $0 as! NSImageView }
+            zip(imageViews, images).forEach { $0.image = $1 }
+
             return stackView
 
         default:

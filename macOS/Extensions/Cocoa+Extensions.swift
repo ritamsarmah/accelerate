@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  Cocoa+Extensions.swift
 //  Accelerate
 //
 //  Created by Ritam Sarmah on 9/3/19.
@@ -7,51 +7,8 @@
 //
 
 import Carbon
+import Cocoa
 import Defaults
-import Foundation
-import SafariServices
-
-extension SFSafariPage {
-    func triggerAction(for shortcut: Shortcut) {
-        dispatchMessageToScript(withName: "triggerAction", userInfo: ["shortcut": shortcut.dictionaryRepresentation])
-    }
-
-    func isAllowed(completion: @escaping (_ isAllowed: Bool, _ rule: String?) -> Void) {
-        getPropertiesWithCompletionHandler { properties in
-            guard let url = properties?.url else {
-                completion(false, nil)
-                return
-            }
-
-            let blocklistRule = self.findRule(for: url, in: Defaults[.blocklist])
-            let isBlocklistInverted = Defaults[.isBlocklistInverted]
-            let isPageAllowed = blocklistRule != nil ? isBlocklistInverted : !isBlocklistInverted
-
-            completion(isPageAllowed, blocklistRule)
-        }
-    }
-
-    private func findRule(for url: URL, in rules: [String]) -> String? {
-        let prefix = "^(https?://)?(www\\.)?"
-        let urlString = url.absoluteString.replacingFirstOccurrence(of: prefix, with: "", options: .regularExpression)
-
-        return
-            rules
-            .filter { !$0.isEmpty }
-            .first { rule in
-                let predicateRule =
-                    rule
-                    .replacingOccurrences(of: "?", with: "\\?")  // Escape question marks in URL
-                    .replacingFirstOccurrence(of: prefix, with: "", options: .regularExpression)
-
-                // [c] means case insensitive
-                let predicate = NSPredicate(format: "SELF LIKE[c] %@", "\(predicateRule)*")
-
-                // Return whether URL matches a rule
-                return predicate.evaluate(with: urlString)
-            }
-    }
-}
 
 extension NSEvent.ModifierFlags: Codable {
     public init(from decoder: Decoder) throws {
@@ -79,7 +36,59 @@ extension NSEvent.ModifierFlags: CustomStringConvertible {
 }
 
 extension NSViewController {
-    func constructViewBindings() -> [String: NSView] {
+
+    // MARK: UI Helpers
+
+    func createLabeledPopupButton(title: String, action: Selector) -> (NSTextField, NSPopUpButton) {
+        let label = createLabel(title: title)
+
+        let button = NSPopUpButton()
+        button.target = self
+        button.action = action
+        button.setAccessibilityLabel(title)
+
+        return (label, button)
+    }
+
+    func createLabeledTextField(title: String, action: Selector) -> (NSTextField, NSTextField) {
+        let label = createLabel(title: title)
+
+        let textField = NSTextField()
+        textField.formatter = Shortcut.Action.rateFormatter
+        textField.refusesFirstResponder = true
+        textField.target = self
+        textField.action = action
+        textField.setAccessibilityLabel(title)
+
+        return (label, textField)
+    }
+
+    func createLabel(title: String) -> NSTextField {
+        let label = NSTextField(labelWithString: "\(title):")
+        label.alignment = .right
+        return label
+    }
+
+    func createDescriptionLabel(withText text: String) -> NSTextField {
+        let descriptionLabel = NSTextField(labelWithString: text)
+        descriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+        return descriptionLabel
+    }
+
+    func createButton(title: String, action: Selector, accessibilityLabel: String) -> NSButton {
+        let button = NSButton(title: title, target: self, action: action)
+        button.setAccessibilityLabel(accessibilityLabel)
+        return button
+    }
+
+    func addVisualConstraints(_ constraints: [String]) {
+        let bindings = constructViewBindings()
+        constraints
+            .map { NSLayoutConstraint.constraints(withVisualFormat: $0, options: [], metrics: nil, views: bindings) }
+            .forEach { view.addConstraints($0) }
+    }
+
+    private func constructViewBindings() -> [String: NSView] {
         var bindings = [String: NSView]()
         let mirror = Mirror(reflecting: self)
 
@@ -92,13 +101,6 @@ extension NSViewController {
         bindings.forEach { $0.value.translatesAutoresizingMaskIntoConstraints = false }
 
         return bindings
-    }
-}
-
-extension [Shortcut] {
-    var toolbarShortcutIndex: Int? {
-        guard let toolbarShortcutIdentifier = Defaults[.toolbarShortcutIdentifier] else { return nil }
-        return Defaults[.shortcuts].firstIndex(where: { $0.identifier == toolbarShortcutIdentifier })
     }
 }
 
@@ -184,19 +186,13 @@ extension NSButton {
         let helpButton = NSButton(title: "", target: target, action: action)
         helpButton.title = ""  // We need to explicitly set the button title to empty string for macOS 10.13
         helpButton.bezelStyle = .helpButton
+        helpButton.setAccessibilityLabel("Help")
         return helpButton
     }
 
     func setCheckboxState(with value: Bool) {
         self.state = value ? .on : .off
     }
-}
-
-// Custom nil coalescing operator for providing a default String value to any optional type
-infix operator ??? : NilCoalescingPrecedence
-
-public func ??? (optional: (some Any)?, defaultValue: @autoclosure () -> String) -> String {
-    optional.map { String(describing: $0) } ?? defaultValue()
 }
 
 extension NSTableView {
