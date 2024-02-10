@@ -57,65 +57,23 @@ class GeneralViewController: NSViewController, PreferencePane {
         // We're not using auto-layout, so need to set a preferred content size for Preferences window to show
         preferredContentSize = .zero
 
-        // Snackbar location label
-        snackbarLocationLabel = NSTextField(labelWithString: "Notification location:")
-        snackbarLocationLabel.alignment = .right
-
-        // Snackbar location button
+        snackbarLocationLabel = createLabel(title: "Notification location")
+        
         snackbarLocationButton = NSPopUpButton()
         snackbarLocationButton.addItems(withTitles: SnackbarLocation.allCases.map(\.description))
         snackbarLocationButton.target = self
         snackbarLocationButton.action = #selector(updateSnackbarLocation)
-        snackbarLocationButton.setAccessibilityLabel("Notification Location")
+        snackbarLocationButton.setAccessibilityLabel("Notification location")
 
-        // Snackbar description label
         snackbarDescriptionLabel = NSTextField(labelWithString: "Each shortcut must also have its\nnotification enabled to show.")
         snackbarDescriptionLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
 
-        // Default rate label
-        defaultRateLabel = NSTextField(labelWithString: "Default playback speed:")
-        defaultRateLabel.alignment = .right
+        (defaultRateLabel, defaultRateTextField) = createLabeledTextField(title: "Default playback speed", action: #selector(updateDefaultRate))
+        (minimumRateLabel, minimumRateTextField) = createLabeledTextField(title: "Minimum playback speed", action: #selector(updateMinimumRate))
+        (maximumRateLabel, maximumRateTextField) = createLabeledTextField(title: "Maximum playback speed", action: #selector(updateMaximumRate))
 
-        // Default rate text field
-        defaultRateTextField = NSTextField()
-        defaultRateTextField.formatter = Shortcut.Action.rateFormatter
-        defaultRateTextField.refusesFirstResponder = true
-        defaultRateTextField.target = self
-        defaultRateTextField.action = #selector(updateDefaultRate)
-        defaultRateTextField.setAccessibilityLabel("Default Playback Speed")
-
-        // Minimum rate label
-        minimumRateLabel = NSTextField(labelWithString: "Minimum playback speed:")
-        minimumRateLabel.alignment = .right
-
-        // Minimum rate text field
-        minimumRateTextField = NSTextField()
-        minimumRateTextField.formatter = Shortcut.Action.rateFormatter
-        minimumRateTextField.refusesFirstResponder = true
-        minimumRateTextField.target = self
-        minimumRateTextField.action = #selector(updateMinimumRate)
-        minimumRateTextField.setAccessibilityLabel("Minimum Playback Speed")
-
-        // Maximum rate label
-        maximumRateLabel = NSTextField(labelWithString: "Maximum playback speed:")
-        maximumRateLabel.alignment = .right
-
-        // Maximum rate text field
-        maximumRateTextField = NSTextField()
-        maximumRateTextField.formatter = Shortcut.Action.rateFormatter
-        maximumRateTextField.refusesFirstResponder = true
-        maximumRateTextField.target = self
-        maximumRateTextField.action = #selector(updateMaximumRate)
-        maximumRateTextField.setAccessibilityLabel("Maximum Playback Speed")
-
-        // Tip button
-        tipButton = NSButton(title: "♥", target: self, action: #selector(purchaseTip(_:)))
-        tipButton.setAccessibilityLabel("Leave a Tip or Review")
-
-        // Restore button
-        restoreButton = NSButton(title: "Restore Defaults", target: self, action: #selector(restoreDefaults(_:)))
-
-        // Help button
+        tipButton = createButton(title: "♥", action: #selector(purchaseTip(_:)), accessibilityLabel: "Leave a tip or review")
+        restoreButton = createButton(title: "Restore Defaults", action: #selector(restoreDefaults(_:)), accessibilityLabel: "Restore defaults")
         helpButton = NSButton.helpButton(target: self, action: #selector(openHelp(_:)))
 
         // Grid view
@@ -176,6 +134,31 @@ class GeneralViewController: NSViewController, PreferencePane {
         defaultRateTextField.doubleValue = Defaults[.defaultRate]
         minimumRateTextField.doubleValue = Defaults[.minimumRate]
         maximumRateTextField.doubleValue = Defaults[.maximumRate]
+    }
+    
+    private func createLabeledTextField(title: String, action: Selector) -> (NSTextField, NSTextField) {
+        let label = createLabel(title: title)
+        
+        let textField = NSTextField()
+        textField.formatter = Shortcut.Action.rateFormatter
+        textField.refusesFirstResponder = true
+        textField.target = self
+        textField.action = action
+        textField.setAccessibilityLabel(title)
+        
+        return (label, textField)
+    }
+    
+    private func createLabel(title: String) -> NSTextField {
+        let label = NSTextField(labelWithString: "\(title):")
+        label.alignment = .right
+        return label
+    }
+    
+    func createButton(title: String, action: Selector, accessibilityLabel: String) -> NSButton {
+        let button = NSButton(title: title, target: self, action: action)
+        button.setAccessibilityLabel(accessibilityLabel)
+        return button
     }
 
     override func viewDidLoad() {
@@ -244,7 +227,6 @@ class GeneralViewController: NSViewController, PreferencePane {
 
     @objc private func purchaseTip(_: NSButton) {
         let alert = NSAlert()
-
         alert.messageText = "Thanks for using Accelerate!"
         alert.informativeText = "If you are enjoying this app, leaving a review or tip helps support future work and is greatly appreciated!"
         alert.alertStyle = .informational

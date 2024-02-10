@@ -184,6 +184,7 @@ extension NSButton {
         let helpButton = NSButton(title: "", target: target, action: action)
         helpButton.title = ""  // We need to explicitly set the button title to empty string for macOS 10.13
         helpButton.bezelStyle = .helpButton
+        helpButton.setAccessibilityLabel("Help")
         return helpButton
     }
 
