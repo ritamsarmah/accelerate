@@ -30,7 +30,7 @@
          location = "group:Shortcut+Action.swift">
       </FileRef>
       <FileRef
-         location = "group:String+Extensions.swift">
+         location = "group:/Users/ritam.sarmah/Developer/accelerate/Extensions/Swift+Extensions.swift">
       </FileRef>
    </Group>
    <Group

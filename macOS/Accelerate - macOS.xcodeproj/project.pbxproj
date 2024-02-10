@@ -25,8 +25,8 @@
 		2097C59625DE07E200279123 /* BlocklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59525DE07E200279123 /* BlocklistViewController.swift */; };
 		2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59925DE080500279123 /* ShortcutsViewController.swift */; };
 		2097C5A225DE085D00279123 /* EditableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C5A125DE085D00279123 /* EditableTableView.swift */; };
-		20BD4589231F09EF0009CC82 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD4588231F09EF0009CC82 /* Extensions.swift */; };
-		20BD458A231F0A850009CC82 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD4588231F09EF0009CC82 /* Extensions.swift */; };
+		20BD4589231F09EF0009CC82 /* Cocoa+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */; };
+		20BD458A231F0A850009CC82 /* Cocoa+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */; };
 		351AB4A02690C83D007E429A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351AB49E2690C83D007E429A /* TutorialViewController.swift */; };
 		351AB4A12690C83D007E429A /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351AB49F2690C83D007E429A /* TutorialViewController.xib */; };
 		351AB4A32691182E007E429A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351AB4A22691182E007E429A /* StoreManager.swift */; };
@@ -60,8 +60,8 @@
 		358908A9283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A3283AE0C900F40CD7 /* Shortcut+Action.swift */; };
 		358908AA283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */; };
 		358908AB283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */; };
-		358908AC283AE0C900F40CD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A5283AE0C900F40CD7 /* String+Extensions.swift */; };
-		358908AD283AE0C900F40CD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A5283AE0C900F40CD7 /* String+Extensions.swift */; };
+		358908AC283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */; };
+		358908AD283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */; };
 		359951C926D2EB7D004D8C08 /* AccelerateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359951C826D2EB7D004D8C08 /* AccelerateTests.swift */; };
 		359951D126D2EBD1004D8C08 /* AccelerateShortcutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359951D026D2EBD1004D8C08 /* AccelerateShortcutTests.swift */; };
 		35B835B02676EAF200C7058C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35B835AF2676EAF200C7058C /* MainMenu.xib */; };
@@ -70,6 +70,8 @@
 		35D22BFD26800314006E23B2 /* GeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D22BFC26800314006E23B2 /* GeneralViewController.xib */; };
 		35D22C0326800343006E23B2 /* ShortcutsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D22C0226800342006E23B2 /* ShortcutsViewController.xib */; };
 		35D22C0526800530006E23B2 /* ShortcutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D22C0426800530006E23B2 /* ShortcutViewController.xib */; };
+		35F17C3A2B7818B000C640B9 /* Safari+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F17C392B7818B000C640B9 /* Safari+Extensions.swift */; };
+		35F17C3B2B7818B000C640B9 /* Safari+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F17C392B7818B000C640B9 /* Safari+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +126,7 @@
 		2097C59525DE07E200279123 /* BlocklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistViewController.swift; sourceTree = "<group>"; };
 		2097C59925DE080500279123 /* ShortcutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsViewController.swift; sourceTree = "<group>"; };
 		2097C5A125DE085D00279123 /* EditableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTableView.swift; sourceTree = "<group>"; };
-		20BD4588231F09EF0009CC82 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cocoa+Extensions.swift"; sourceTree = "<group>"; };
 		351AB49E2690C83D007E429A /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		351AB49F2690C83D007E429A /* TutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		351AB4A22691182E007E429A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 		358908A2283AE0C900F40CD7 /* Defaults+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Shared.swift"; path = "../../Extensions/Defaults+Shared.swift"; sourceTree = "<group>"; };
 		358908A3283AE0C900F40CD7 /* Shortcut+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Shortcut+Action.swift"; path = "../../Extensions/Shortcut+Action.swift"; sourceTree = "<group>"; };
 		358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Workaround.swift"; path = "../../Extensions/Defaults+Workaround.swift"; sourceTree = "<group>"; };
-		358908A5283AE0C900F40CD7 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "../../Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
+		358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Swift+Extensions.swift"; path = "../../Extensions/Swift+Extensions.swift"; sourceTree = "<group>"; };
 		359951C626D2EB7D004D8C08 /* AccelerateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccelerateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		359951C826D2EB7D004D8C08 /* AccelerateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerateTests.swift; sourceTree = "<group>"; };
 		359951CA26D2EB7D004D8C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		35D22BFC26800314006E23B2 /* GeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralViewController.xib; sourceTree = "<group>"; };
 		35D22C0226800342006E23B2 /* ShortcutsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShortcutsViewController.xib; sourceTree = "<group>"; };
 		35D22C0426800530006E23B2 /* ShortcutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShortcutViewController.xib; sourceTree = "<group>"; };
+		35F17C392B7818B000C640B9 /* Safari+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Safari+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,7 +274,6 @@
 		204980C0227F90B00031C167 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				204980C1227F90BF0031C167 /* Defaults+Keys.swift */,
 				3572AC72283A9EE500D902A1 /* Log.swift */,
 				2097C56125D9F5B500279123 /* PreferenceMigrator.swift */,
 				204F31F525D9EB2B0040A0E8 /* Shortcut.swift */,
@@ -323,11 +325,13 @@
 		358908A1283AE0BD00F40CD7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */,
+				204980C1227F90BF0031C167 /* Defaults+Keys.swift */,
 				358908A2283AE0C900F40CD7 /* Defaults+Shared.swift */,
 				358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */,
-				20BD4588231F09EF0009CC82 /* Extensions.swift */,
+				35F17C392B7818B000C640B9 /* Safari+Extensions.swift */,
 				358908A3283AE0C900F40CD7 /* Shortcut+Action.swift */,
-				358908A5283AE0C900F40CD7 /* String+Extensions.swift */,
+				358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -526,9 +530,10 @@
 			files = (
 				3572AC73283A9EE500D902A1 /* SnackbarLocation.swift in Sources */,
 				2038D4D4220EA4F000E8A9FE /* GeneralViewController.swift in Sources */,
+				35F17C3A2B7818B000C640B9 /* Safari+Extensions.swift in Sources */,
 				351AB4A32691182E007E429A /* StoreManager.swift in Sources */,
-				20BD4589231F09EF0009CC82 /* Extensions.swift in Sources */,
-				358908AC283AE0C900F40CD7 /* String+Extensions.swift in Sources */,
+				20BD4589231F09EF0009CC82 /* Cocoa+Extensions.swift in Sources */,
+				358908AC283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */,
 				2038D4CF220EA4F000E8A9FE /* AppDelegate.swift in Sources */,
 				358908A8283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */,
 				35D22BF4267E518C006E23B2 /* ShortcutViewController.swift in Sources */,
@@ -549,12 +554,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20BD458A231F0A850009CC82 /* Extensions.swift in Sources */,
+				20BD458A231F0A850009CC82 /* Cocoa+Extensions.swift in Sources */,
 				204980C3227F90BF0031C167 /* Defaults+Keys.swift in Sources */,
 				358908A7283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */,
 				358908AB283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */,
-				358908AD283AE0C900F40CD7 /* String+Extensions.swift in Sources */,
+				358908AD283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */,
 				3572AC74283A9EE500D902A1 /* SnackbarLocation.swift in Sources */,
+				35F17C3B2B7818B000C640B9 /* Safari+Extensions.swift in Sources */,
 				2038D4E7220EA4F100E8A9FE /* SafariExtensionViewController.swift in Sources */,
 				2038D4E5220EA4F100E8A9FE /* SafariExtensionHandler.swift in Sources */,
 				2097C56325D9F5B500279123 /* PreferenceMigrator.swift in Sources */,

@@ -38,8 +38,8 @@
 		3572AC7A283A9EEF00D902A1 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC77283A9EEF00D902A1 /* Log.swift */; };
 		3572AC7B283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */; };
 		3572AC7C283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */; };
-		3572AC83283A9F6800D902A1 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC7F283A9F6800D902A1 /* String+Extensions.swift */; };
-		3572AC84283A9F6800D902A1 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC7F283A9F6800D902A1 /* String+Extensions.swift */; };
+		3572AC83283A9F6800D902A1 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */; };
+		3572AC84283A9F6800D902A1 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */; };
 		3572AC85283A9F6800D902A1 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */; };
 		3572AC86283A9F6800D902A1 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */; };
 		3572AC87283A9F6800D902A1 /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC81283A9F6800D902A1 /* Defaults+Workaround.swift */; };
@@ -56,8 +56,8 @@
 		359F32BC2751DB7E00C476BB /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F32BB2751DB7E00C476BB /* NumberTextField.swift */; };
 		35A4EC7D26EA6116006CB45B /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7C26EA6116006CB45B /* Defaults+Keys.swift */; };
 		35A4EC7E26EA6116006CB45B /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7C26EA6116006CB45B /* Defaults+Keys.swift */; };
-		35A4EC8026EA63E1006CB45B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7F26EA63E1006CB45B /* Extensions.swift */; };
-		35A4EC8126EA63E1006CB45B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7F26EA63E1006CB45B /* Extensions.swift */; };
+		35A4EC8026EA63E1006CB45B /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */; };
+		35A4EC8126EA63E1006CB45B /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */; };
 		35A4EC8326EA65CA006CB45B /* BlocklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC8226EA65CA006CB45B /* BlocklistView.swift */; };
 		35A97BF526E2995400299FC0 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A97BF426E2995400299FC0 /* Shortcut.swift */; };
 		35A97BF626E2995400299FC0 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A97BF426E2995400299FC0 /* Shortcut.swift */; };
@@ -124,7 +124,7 @@
 		35643ED4283595B80062CA49 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		3572AC77283A9EEF00D902A1 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = ../../Common/Log.swift; sourceTree = "<group>"; };
 		3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnackbarLocation.swift; path = ../../Common/SnackbarLocation.swift; sourceTree = "<group>"; };
-		3572AC7F283A9F6800D902A1 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "../../Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
+		3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Swift+Extensions.swift"; path = "../../Extensions/Swift+Extensions.swift"; sourceTree = "<group>"; };
 		3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Shortcut+Action.swift"; path = "../../Extensions/Shortcut+Action.swift"; sourceTree = "<group>"; };
 		3572AC81283A9F6800D902A1 /* Defaults+Workaround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Workaround.swift"; path = "../../Extensions/Defaults+Workaround.swift"; sourceTree = "<group>"; };
 		3572AC82283A9F6800D902A1 /* Defaults+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Shared.swift"; path = "../../Extensions/Defaults+Shared.swift"; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		357AE8A626E6D410001B824A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		359F32BB2751DB7E00C476BB /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		35A4EC7C26EA6116006CB45B /* Defaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Keys.swift"; sourceTree = "<group>"; };
-		35A4EC7F26EA63E1006CB45B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		35A4EC8226EA65CA006CB45B /* BlocklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistView.swift; sourceTree = "<group>"; };
 		35A97BF426E2995400299FC0 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		35ADA85026E6C0920012D2DB /* ShortcutListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutListView.swift; sourceTree = "<group>"; };
@@ -248,11 +248,12 @@
 		3572AC7E283A9F5200D902A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				35A4EC7C26EA6116006CB45B /* Defaults+Keys.swift */,
 				3572AC82283A9F6800D902A1 /* Defaults+Shared.swift */,
 				3572AC81283A9F6800D902A1 /* Defaults+Workaround.swift */,
-				35A4EC7F26EA63E1006CB45B /* Extensions.swift */,
 				3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */,
-				3572AC7F283A9F6800D902A1 /* String+Extensions.swift */,
+				3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */,
+				35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,7 +298,6 @@
 		35A97BF026E298FF00299FC0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				35A4EC7C26EA6116006CB45B /* Defaults+Keys.swift */,
 				3572AC77283A9EEF00D902A1 /* Log.swift */,
 				35A97BF426E2995400299FC0 /* Shortcut.swift */,
 				3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */,
@@ -455,7 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3559CAB1273DBA310014B565 /* AlertInfo.swift in Sources */,
-				3572AC83283A9F6800D902A1 /* String+Extensions.swift in Sources */,
+				3572AC83283A9F6800D902A1 /* Swift+Extensions.swift in Sources */,
 				3572AC89283A9F6800D902A1 /* Defaults+Shared.swift in Sources */,
 				353EB0A426D34F4B00ECC91F /* AppDelegate.swift in Sources */,
 				359F32BC2751DB7E00C476BB /* NumberTextField.swift in Sources */,
@@ -473,7 +473,7 @@
 				35A97BF526E2995400299FC0 /* Shortcut.swift in Sources */,
 				35ADA85126E6C0920012D2DB /* ShortcutListView.swift in Sources */,
 				3572AC79283A9EEF00D902A1 /* Log.swift in Sources */,
-				35A4EC8026EA63E1006CB45B /* Extensions.swift in Sources */,
+				35A4EC8026EA63E1006CB45B /* UIKit+Extensions.swift in Sources */,
 				35ADA85326E6C0BE0012D2DB /* ShortcutDetailView.swift in Sources */,
 				35ADA85726E6C5650012D2DB /* GeneralView.swift in Sources */,
 				35A4EC7D26EA6116006CB45B /* Defaults+Keys.swift in Sources */,
@@ -485,8 +485,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35A4EC8126EA63E1006CB45B /* Extensions.swift in Sources */,
-				3572AC84283A9F6800D902A1 /* String+Extensions.swift in Sources */,
+				35A4EC8126EA63E1006CB45B /* UIKit+Extensions.swift in Sources */,
+				3572AC84283A9F6800D902A1 /* Swift+Extensions.swift in Sources */,
 				3572AC7C283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */,
 				353EB0D726D34F4D00ECC91F /* SafariWebExtensionHandler.swift in Sources */,
 				3572AC8A283A9F6800D902A1 /* Defaults+Shared.swift in Sources */,
