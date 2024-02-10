@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func openHelp(_: NSMenuItem) {
-        let url = URL(string: "https://ritam.me/projects/accelerate/faq")!
+        let url = URL(string: "https://ritam.me/projects/accelerate/faq-mac")!
         NSWorkspace.shared.open(url)
     }
 
