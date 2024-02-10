@@ -41,7 +41,7 @@ struct AboutView: View {
             }
 
             Section {
-                Link("Accelerate for Mac", destination: URL(string: "https://apps.apple.com/app/id1459809092?mt=12")!)
+                Link("GitHub", destination: URL(string: "https://github.com/ritamsarmah/accelerate")!)
             }
         }
     }
