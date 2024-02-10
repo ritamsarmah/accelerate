@@ -295,24 +295,23 @@ extension ShortcutsViewController: NSTableViewDataSource, NSTableViewDelegate {
             return textField
 
         case Identifier.optionsColumn:
-            let bellImage = NSImage(named: .bell)!.tinted(if: shortcut.showSnackbar)
-            let contextualMenuImage = NSImage(named: .contextualMenu)!.tinted(if: shortcut.showInContextMenu)
-            let globeImage = NSImage(named: .globe)!.tinted(if: shortcut.isGlobal)
+            let images = [
+                NSImage(named: .bell)!.tinted(if: shortcut.showSnackbar),
+                NSImage(named: .contextualMenu)!.tinted(if: shortcut.showInContextMenu),
+                NSImage(named: .globe)!.tinted(if: shortcut.isGlobal),
+            ]
 
             let stackView = tableView.dequeueReusableView(withIdentifier: Identifier.optionsColumn, for: row) {
-                let bellImageView = NSImageView(image: bellImage)
-                let contextualMenuView = NSImageView(image: contextualMenuImage)
-                let globeImageView = NSImageView(image: globeImage)
-
-                let stackView = NSStackView(views: [bellImageView, contextualMenuView, globeImageView])
+                let imageViews = images.map { NSImageView(image: $0) }
+                let stackView = NSStackView(views: imageViews)
                 stackView.orientation = .horizontal
                 stackView.spacing = 8
                 return stackView
             }
 
-            (stackView.views[0] as! NSImageView).image = bellImage
-            (stackView.views[1] as! NSImageView).image = contextualMenuImage
-            (stackView.views[2] as! NSImageView).image = globeImage
+            let imageViews = stackView.views.map { $0 as! NSImageView }
+            zip(imageViews, images).forEach { $0.image = $1 }
+            
             return stackView
 
         default:
