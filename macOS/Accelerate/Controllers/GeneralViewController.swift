@@ -58,7 +58,7 @@ class GeneralViewController: NSViewController, PreferencePane {
         preferredContentSize = .zero
 
         snackbarLocationLabel = createLabel(title: "Notification location")
-        
+
         snackbarLocationButton = NSPopUpButton()
         snackbarLocationButton.addItems(withTitles: SnackbarLocation.allCases.map(\.description))
         snackbarLocationButton.target = self
@@ -135,26 +135,26 @@ class GeneralViewController: NSViewController, PreferencePane {
         minimumRateTextField.doubleValue = Defaults[.minimumRate]
         maximumRateTextField.doubleValue = Defaults[.maximumRate]
     }
-    
+
     private func createLabeledTextField(title: String, action: Selector) -> (NSTextField, NSTextField) {
         let label = createLabel(title: title)
-        
+
         let textField = NSTextField()
         textField.formatter = Shortcut.Action.rateFormatter
         textField.refusesFirstResponder = true
         textField.target = self
         textField.action = action
         textField.setAccessibilityLabel(title)
-        
+
         return (label, textField)
     }
-    
+
     private func createLabel(title: String) -> NSTextField {
         let label = NSTextField(labelWithString: "\(title):")
         label.alignment = .right
         return label
     }
-    
+
     func createButton(title: String, action: Selector, accessibilityLabel: String) -> NSButton {
         let button = NSButton(title: title, target: self, action: action)
         button.setAccessibilityLabel(accessibilityLabel)

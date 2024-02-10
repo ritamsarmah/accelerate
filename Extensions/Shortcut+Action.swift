@@ -11,7 +11,7 @@ extension Shortcut {
     enum Action: Hashable {
         case speedUp(amount: Double = 0.25)
         case slowDown(amount: Double = 0.25)
-        case setRate(Double? = nil) // nil means set to user-configured default speed
+        case setRate(Double? = nil)  // nil means set to user-configured default speed
         case showRate
         case playOrPause
         case skipForward(seconds: Int = 10)

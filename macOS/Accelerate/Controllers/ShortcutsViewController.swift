@@ -311,7 +311,7 @@ extension ShortcutsViewController: NSTableViewDataSource, NSTableViewDelegate {
 
             let imageViews = stackView.views.map { $0 as! NSImageView }
             zip(imageViews, images).forEach { $0.image = $1 }
-            
+
             return stackView
 
         default:

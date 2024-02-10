@@ -120,7 +120,7 @@ extension Shortcut.Action {
                 guard let seconds = newValue else { break }
                 self = .skipBackward(seconds: seconds.intValue)
             default:
-                break // No associated value
+                break  // No associated value
             }
         }
     }

@@ -60,7 +60,7 @@ struct NumberTextField<Value>: View {
             Text(title)
             Spacer()
             TextField(title, text: $text, prompt: Text(placeholder))
-                .keyboardType(.numbersAndPunctuation) // Use numbers and punctuation keyboard since it has a submit button to save
+                .keyboardType(.numbersAndPunctuation)  // Use numbers and punctuation keyboard since it has a submit button to save
                 .submitLabel(.done)
                 .multilineTextAlignment(.trailing)
                 .onSubmit {

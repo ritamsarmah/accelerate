@@ -12,13 +12,13 @@ extension ShortcutDetailView {
 
     class ViewModel: ObservableObject {
 
-        @Published var actionDescription: String // Use description since actions aren't equal if they have different associated values
+        @Published var actionDescription: String  // Use description since actions aren't equal if they have different associated values
         @Published var associatedValue: NSNumber!
         @Published var keyInput: String
         @Published var useDefaultSpeed: Bool
         @Published var showSnackbar: Bool
         @Published var showInPopup: Bool
-        @Published var isEnabled: Bool // NOTE: currently unimplemented in UI
+        @Published var isEnabled: Bool  // NOTE: currently unimplemented in UI
 
         private var shortcut: Shortcut?
         private var lastValidKeyInput: String
@@ -60,20 +60,21 @@ extension ShortcutDetailView {
         }
 
         func saveShortcut() {
-            let action: Shortcut.Action = switch actionDescription {
-            case "Speed Up": .speedUp(amount: associatedValue.doubleValue)
-            case "Slow Down": .slowDown(amount: associatedValue.doubleValue)
-            case "Toggle Speed": .setRate(useDefaultSpeed ? nil : associatedValue.doubleValue)
-            case "Show Current Speed": .showRate
-            case "Play/Pause": .playOrPause
-            case "Skip Forward": .skipForward(seconds: associatedValue.intValue)
-            case "Skip Backward": .skipBackward(seconds: associatedValue.intValue)
-            case "Skip to End": .skipToEnd
-            case "Toggle Mute": .toggleMute
-            case "Toggle Picture in Picture": .pip
-            case "Toggle Fullscreen": .fullscreen
-            default: fatalError("Unknown action description")
-            }
+            let action: Shortcut.Action =
+                switch actionDescription {
+                case "Speed Up": .speedUp(amount: associatedValue.doubleValue)
+                case "Slow Down": .slowDown(amount: associatedValue.doubleValue)
+                case "Toggle Speed": .setRate(useDefaultSpeed ? nil : associatedValue.doubleValue)
+                case "Show Current Speed": .showRate
+                case "Play/Pause": .playOrPause
+                case "Skip Forward": .skipForward(seconds: associatedValue.intValue)
+                case "Skip Backward": .skipBackward(seconds: associatedValue.intValue)
+                case "Skip to End": .skipToEnd
+                case "Toggle Mute": .toggleMute
+                case "Toggle Picture in Picture": .pip
+                case "Toggle Fullscreen": .fullscreen
+                default: fatalError("Unknown action description")
+                }
 
             if let shortcut, let index = Defaults[.shortcuts].firstIndex(of: shortcut) {
                 // Update existing shortcut
