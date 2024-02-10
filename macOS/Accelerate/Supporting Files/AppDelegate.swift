@@ -80,6 +80,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url)
     }
 
+    @IBAction func openIssues(_: NSMenuItem) {
+        let url = URL(string: "https://github.com/ritamsarmah/accelerate/issues")!
+        NSWorkspace.shared.open(url)
+    }
+
     @IBAction func openContact(_: NSMenuItem) {
         let url = URL(string: "mailto:hello@ritam.me")!
         NSWorkspace.shared.open(url)
