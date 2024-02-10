@@ -79,20 +79,6 @@ extension NSEvent.ModifierFlags: CustomStringConvertible {
 }
 
 extension NSViewController {
-    func constructViewBindings() -> [String: NSView] {
-        var bindings = [String: NSView]()
-        let mirror = Mirror(reflecting: self)
-
-        _ = mirror.children.compactMap {
-            guard let name = $0.label, let view = $0.value as? NSView else { return }
-            bindings[name] = view
-        }
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-        bindings.forEach { $0.value.translatesAutoresizingMaskIntoConstraints = false }
-
-        return bindings
-    }
 
     // MARK: UI Helpers
 
@@ -138,6 +124,27 @@ extension NSViewController {
         return button
     }
 
+    func addVisualConstraints(_ constraints: [String]) {
+        let bindings = constructViewBindings()
+        constraints
+            .map { NSLayoutConstraint.constraints(withVisualFormat: $0, options: [], metrics: nil, views: bindings) }
+            .forEach { view.addConstraints($0) }
+    }
+
+    private func constructViewBindings() -> [String: NSView] {
+        var bindings = [String: NSView]()
+        let mirror = Mirror(reflecting: self)
+
+        _ = mirror.children.compactMap {
+            guard let name = $0.label, let view = $0.value as? NSView else { return }
+            bindings[name] = view
+        }
+
+        view.translatesAutoresizingMaskIntoConstraints = false
+        bindings.forEach { $0.value.translatesAutoresizingMaskIntoConstraints = false }
+
+        return bindings
+    }
 }
 
 extension [Shortcut] {

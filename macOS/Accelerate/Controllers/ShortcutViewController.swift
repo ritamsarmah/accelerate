@@ -166,20 +166,16 @@ class ShortcutViewController: NSViewController {
         view.addSubview(deleteButton)
         view.addSubview(buttonStackView)
 
-        let bindings = constructViewBindings()
-
-        let constraints = [
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[shortcutView(19)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[valueTextField(64)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[valueTextField(22)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-[gridView]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-[gridView]-(>=16)-[buttonStackView]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[buttonStackView]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[deleteButton]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-[deleteButton]", options: [], metrics: nil, views: bindings),
-        ]
-
-        constraints.forEach { view.addConstraints($0) }
+        addVisualConstraints([
+            "V:[shortcutView(19)]",
+            "H:[valueTextField(64)]",
+            "V:[valueTextField(22)]",
+            "H:|-[gridView]-|",
+            "V:|-[gridView]-(>=16)-[buttonStackView]-|",
+            "H:[buttonStackView]-|",
+            "V:[deleteButton]-|",
+            "H:|-[deleteButton]",
+        ])
 
         gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 

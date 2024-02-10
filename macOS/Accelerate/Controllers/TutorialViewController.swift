@@ -48,35 +48,27 @@ class TutorialViewController: NSViewController {
     override func loadView() {
         super.loadView()
 
-        // Image view
         imageView = NSImageView(image: NSImage(named: "AppIcon")!)
 
-        // Title label
         titleLabel = NSTextField(labelWithString: "")
         titleLabel.font = NSFont.boldSystemFont(ofSize: 24)
         titleLabel.alignment = .center
 
-        // Subtitle label
         subtitleLabel = NSTextField(labelWithString: "")
         subtitleLabel.maximumNumberOfLines = 0
         subtitleLabel.lineBreakMode = .byWordWrapping
         subtitleLabel.alignment = .center
 
-        // Next button
         nextButton = NSButton(title: "Continue", target: self, action: #selector(next))
 
-        // Previous button
         backButton = NSButton(title: "Back", target: self, action: #selector(back))
         backButton.isHidden = true
 
-        // Action button
         actionButton = NSButton(title: "", target: self, action: nil)
 
-        // Action button label
         actionButtonLabel = NSTextField(labelWithString: "")
         actionButtonLabel.textColor = .secondaryLabelColor
 
-        // Stack view
         stackView = NSStackView(views: [imageView, titleLabel, subtitleLabel, actionButton, actionButtonLabel])
         stackView.orientation = .vertical
         stackView.detachesHiddenViews = true
@@ -88,19 +80,14 @@ class TutorialViewController: NSViewController {
         view.addSubview(nextButton)
         view.addSubview(backButton)
 
-        // Layout constraints
-        let bindings = constructViewBindings()
-
-        let constraints = [
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-[stackView]-[backButton]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-[stackView]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[imageView(64)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[imageView(64)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[nextButton]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[backButton]-[nextButton]-|", options: [], metrics: nil, views: bindings),
-        ]
-
-        constraints.forEach { view.addConstraints($0) }
+        addVisualConstraints([
+            "V:|-[stackView]-[backButton]-|",
+            "H:|-[stackView]-|",
+            "V:[imageView(64)]",
+            "H:[imageView(64)]",
+            "V:[nextButton]-|",
+            "H:[backButton]-[nextButton]-|",
+        ])
 
         view.widthAnchor.constraint(equalToConstant: 512).isActive = true
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

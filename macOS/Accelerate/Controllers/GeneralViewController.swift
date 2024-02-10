@@ -98,21 +98,17 @@ class GeneralViewController: NSViewController, PreferencePane {
         view.addSubview(gridView)
         view.addSubview(buttonStackView)
 
-        bindings = constructViewBindings()
-
-        let constraints = [
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[defaultRateTextField(64)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[defaultRateTextField(22)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[minimumRateTextField(64)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[minimumRateTextField(22)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[maximumRateTextField(64)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[maximumRateTextField(22)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=64)-[gridView]-(>=64)-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-[gridView]-(24)-[buttonStackView]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[buttonStackView]-|", options: [], metrics: nil, views: bindings),
-        ]
-
-        constraints.forEach { view.addConstraints($0) }
+        addVisualConstraints([
+            "H:[defaultRateTextField(64)]",
+            "V:[defaultRateTextField(22)]",
+            "H:[minimumRateTextField(64)]",
+            "V:[minimumRateTextField(22)]",
+            "H:[maximumRateTextField(64)]",
+            "V:[maximumRateTextField(22)]",
+            "H:|-(>=64)-[gridView]-(>=64)-|",
+            "V:|-[gridView]-(24)-[buttonStackView]-|",
+            "H:[buttonStackView]-|",
+        ])
 
         gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 

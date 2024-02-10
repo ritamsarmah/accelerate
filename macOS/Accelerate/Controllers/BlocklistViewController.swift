@@ -83,15 +83,11 @@ class BlocklistViewController: NSViewController, PreferencePane {
 
         view.addSubview(stackView)
 
-        let bindings = constructViewBindings()
-
-        let constraints = [
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=32)-[stackView]-(>=32)-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[blocklistTableView(256)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-[stackView]-|", options: [], metrics: nil, views: bindings),
-        ]
-
-        constraints.forEach { view.addConstraints($0) }
+        addVisualConstraints([
+            "H:|-(>=32)-[stackView]-(>=32)-|",
+            "V:[blocklistTableView(256)]",
+            "V:|-[stackView]-|",
+        ])
 
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 

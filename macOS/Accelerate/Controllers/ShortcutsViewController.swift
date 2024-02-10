@@ -77,17 +77,13 @@ class ShortcutsViewController: NSViewController, PreferencePane {
         view.addSubview(gridView)
         view.addSubview(restoreButton)
 
-        let bindings = constructViewBindings()
-
-        let constraints = [
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=32)-[gridView]-(>=32)-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[shortcutTableView(256)]", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|-[gridView]-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[restoreButton]-(>=32)-|", options: [], metrics: nil, views: bindings),
-            NSLayoutConstraint.constraints(withVisualFormat: "V:[restoreButton]-|", options: [], metrics: nil, views: bindings),
-        ]
-
-        constraints.forEach { view.addConstraints($0) }
+        addVisualConstraints([
+            "H:|-(>=32)-[gridView]-(>=32)-|",
+            "V:[shortcutTableView(256)]",
+            "V:|-[gridView]-|",
+            "H:[restoreButton]-(>=32)-|",
+            "V:[restoreButton]-|",
+        ])
 
         gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
