@@ -140,7 +140,8 @@ extension Shortcut.Action: CaseIterable, CustomStringConvertible, CustomDebugStr
         formatter.locale = .current
         return formatter
     }
-    
+
+    // swift-format-ignore
     static func ==(lhs: Shortcut.Action, rhs: Shortcut.Action) -> Bool {
         return lhs.description == rhs.description
     }
