@@ -89,4 +89,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "mailto:hello@ritam.me")!
         NSWorkspace.shared.open(url)
     }
+    
+    @IBAction func openGitHub(_: NSMenuItem) {
+        let url = URL(string: "https://github.com/ritamsarmah/accelerate")!
+        NSWorkspace.shared.open(url)
+    }
 }

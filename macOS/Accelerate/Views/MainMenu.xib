@@ -155,6 +155,13 @@
                                     <action selector="openContact:" target="Voe-Tx-rLC" id="Sh6-GF-eIz"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VeI-qV-cdD"/>
+                            <menuItem title="GitHub" id="nRd-EH-qWd" userLabel="GitHub">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openGitHub:" target="Voe-Tx-rLC" id="pDg-GM-Xc4"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
