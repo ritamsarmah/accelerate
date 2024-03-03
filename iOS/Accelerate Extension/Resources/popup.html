@@ -30,7 +30,7 @@
             <template x-if="$store.allowed">
                 <div>
                     <p
-                        x-text="'Speed: ' + parseFloat($store.rate.toFixed(2)) + 'x'"
+                        x-text="'Speed: ' + $store.rate + 'x'"
                         id="rate-label"
                     ></p>
                     <div id="shortcut-grid">
