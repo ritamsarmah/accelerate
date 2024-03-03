@@ -195,7 +195,8 @@ function _setRate(newRate, videos) {
     } else if (currentRate == newRate) {
         currentRate = defaultRate;
     } else {
-        currentRate = Math.min(Math.max(newRate, minimumRate), maximumRate);
+        let fixedRate = parseFloat(newRate.toFixed(2));
+        currentRate = Math.min(Math.max(fixedRate, minimumRate), maximumRate);
     }
 
     for (let video of videos) {
@@ -278,7 +279,8 @@ function configureVideo(video) {
     // NOTE: This is also triggered redundantly by Accelerate, but has no side effect.
     video.addEventListener("ratechange", event => {
         if (event.target.readyState > 0) {
-            currentRate = event.target.playbackRate;
+            // Manually set current rate to update tracked value without altering video rates.
+            currentRate = parseFloat(event.target.playbackRate.toFixed(2));
             logger.d(`Rate set to ${currentRate}`);
         }
     });

@@ -41,10 +41,10 @@ function showSnackbar(icon) {
     if (icon != null) {
         snackbar.style.boxSizing = "content-box";
         snackbar.style.width = "36px";
-        snackbar.innerHTML = getSnackbarIcon(icon)
+        snackbar.innerHTML = getSnackbarIcon(icon);
     } else {
         snackbar.style.width = "auto";
-        snackbar.innerHTML = parseFloat(currentRate.toFixed(2)) + "x";
+        snackbar.innerHTML = `${currentRate}x`;
     }
 
     // Reset visibility timer and show snackbar
