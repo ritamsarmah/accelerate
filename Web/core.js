@@ -19,10 +19,12 @@ var maximumRate = 16.0; // Maximum video playback rate
 var snackbarTimeout; // For displaying notification
 var videoObserver; // Observer for new videos
 
+/** Initialize the extension. May be overriden by platform-specific scripts. */
 function initialize(settings) {
     _initialize(settings);
 }
 
+/** Helper for initialize for overriding. */
 function _initialize(settings) {
     if (initialized) return;
 
@@ -179,12 +181,12 @@ function triggerAction(shortcut, event) {
 
 /* Video */
 
-/** Updates the rate for a list of videos */
+/** Updates the rate for a list of videos. May be overriden by platform-specific scripts.  */
 function setRate(newRate, videos) {
     _setRate(newRate, videos);
 }
 
-/** Helper for setRate, so we can override actual setRate in iOS */
+/** Helper for setRate for overriding. */
 function _setRate(newRate, videos) {
     if (videos.length == 0) return;
 
