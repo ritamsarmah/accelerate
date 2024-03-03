@@ -195,7 +195,7 @@ function _setRate(newRate, videos) {
     } else if (currentRate == newRate) {
         currentRate = defaultRate;
     } else {
-        let fixedRate = parseFloat(newRate.toFixed(2));
+        let fixedRate = parseFloat(newRate.toFixed(2)); // Avoids floating point rounding errors
         currentRate = Math.min(Math.max(fixedRate, minimumRate), maximumRate);
     }
 
