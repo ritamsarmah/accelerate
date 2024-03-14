@@ -421,7 +421,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = "Ritam Sarmah";
 				TargetAttributes = {
 					2038D4C8220EA4F000E8A9FE = {
@@ -724,7 +724,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Accelerate Extension/Accelerate_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 40200.1;
+				CURRENT_PROJECT_VERSION = 40201.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = XXYXWGAW9Y;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -735,7 +735,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 4.2.0;
+				MARKETING_VERSION = 4.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ritamsarmah.Accelerate.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -750,7 +750,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Accelerate Extension/Accelerate_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 40200.1;
+				CURRENT_PROJECT_VERSION = 40201.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = XXYXWGAW9Y;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -761,7 +761,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 4.2.0;
+				MARKETING_VERSION = 4.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ritamsarmah.Accelerate.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -779,7 +779,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 40200.1;
+				CURRENT_PROJECT_VERSION = 40201.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = XXYXWGAW9Y;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -789,7 +789,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 4.2.0;
+				MARKETING_VERSION = 4.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ritamsarmah.Accelerate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -806,7 +806,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 40200.1;
+				CURRENT_PROJECT_VERSION = 40201.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = XXYXWGAW9Y;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -816,7 +816,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 4.2.0;
+				MARKETING_VERSION = 4.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ritamsarmah.Accelerate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
