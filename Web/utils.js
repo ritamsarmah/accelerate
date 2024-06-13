@@ -17,7 +17,7 @@ function activeElementHasEditableText() {
 
     // Check if any attribute name contains any keyword
     function hasKeywordAttribute(element, keywords) {
-        if (!element.attributes) return false;
+        if (element.attributes == null) return false;
 
         for (const attr of element.attributes) {
             const hasKeyword = keywords.some(keyword =>
