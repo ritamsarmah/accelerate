@@ -72,6 +72,7 @@
 		35D22C0526800530006E23B2 /* ShortcutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D22C0426800530006E23B2 /* ShortcutViewController.xib */; };
 		35F17C3A2B7818B000C640B9 /* Safari+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F17C392B7818B000C640B9 /* Safari+Extensions.swift */; };
 		35F17C3B2B7818B000C640B9 /* Safari+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F17C392B7818B000C640B9 /* Safari+Extensions.swift */; };
+		35F620362C4D507300965225 /* loop.svg in Resources */ = {isa = PBXBuildFile; fileRef = 35F620352C4D507300965225 /* loop.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		35D22C0226800342006E23B2 /* ShortcutsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShortcutsViewController.xib; sourceTree = "<group>"; };
 		35D22C0426800530006E23B2 /* ShortcutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShortcutViewController.xib; sourceTree = "<group>"; };
 		35F17C392B7818B000C640B9 /* Safari+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Safari+Extensions.swift"; sourceTree = "<group>"; };
+		35F620352C4D507300965225 /* loop.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = loop.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 				3572ACCA283AD7EB00D902A1 /* mute.svg */,
 				3572ACC6283AD7EB00D902A1 /* unmute.svg */,
 				3572ACC9283AD7EB00D902A1 /* pip.svg */,
+				35F620352C4D507300965225 /* loop.svg */,
 			);
 			name = snackbar;
 			path = ../../Web/snackbar;
@@ -496,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35F620362C4D507300965225 /* loop.svg in Resources */,
 				3572ACE4283AD7EB00D902A1 /* forward.svg in Resources */,
 				3572AC9F283AB40000D902A1 /* snackbar.css in Resources */,
 				3572ACA8283AB4D500D902A1 /* utils.js in Resources */,

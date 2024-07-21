@@ -77,6 +77,7 @@ extension Shortcut.Action {
         case .toggleMute: "speaker.slash"
         case .pip: "pip"
         case .fullscreen: "arrow.up.left.and.arrow.down.right"
+        case .loop: "point.forward.to.point.capsulepath"
         }
     }
 }

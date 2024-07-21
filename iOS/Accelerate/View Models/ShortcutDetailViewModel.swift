@@ -73,6 +73,7 @@ extension ShortcutDetailView {
                 case "Toggle Mute": .toggleMute
                 case "Toggle Picture in Picture": .pip
                 case "Toggle Fullscreen": .fullscreen
+                case "Toggle Looping": .loop
                 default: fatalError("Unknown action description")
                 }
 

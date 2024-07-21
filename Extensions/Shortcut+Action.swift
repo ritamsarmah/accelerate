@@ -20,6 +20,7 @@ extension Shortcut {
         case toggleMute
         case pip
         case fullscreen
+        case loop
     }
 }
 
@@ -29,7 +30,7 @@ extension Shortcut.Action: Codable {
     }
 
     private enum Base: String, Codable {
-        case speedUp, slowDown, setRate, showRate, play, skipForward, skipBackward, skipToEnd, toggleMute, pip, fullscreen
+        case speedUp, slowDown, setRate, showRate, play, skipForward, skipBackward, skipToEnd, toggleMute, pip, fullscreen, loop
     }
 
     private struct RateChange: Codable {
@@ -75,6 +76,8 @@ extension Shortcut.Action: Codable {
             try container.encode(Base.pip, forKey: .base)
         case .fullscreen:
             try container.encode(Base.fullscreen, forKey: .base)
+        case .loop:
+            try container.encode(Base.loop, forKey: .base)
         }
     }
 
@@ -110,13 +113,15 @@ extension Shortcut.Action: Codable {
             self = .pip
         case .fullscreen:
             self = .fullscreen
+        case .loop:
+            self = .loop
         }
     }
 }
 
 extension Shortcut.Action: CaseIterable, CustomStringConvertible, CustomDebugStringConvertible {
     static var allCases: [Shortcut.Action] {
-        [.speedUp(), .slowDown(), .setRate(), .showRate, .playOrPause, .skipForward(), .skipBackward(), .skipToEnd, .toggleMute, .pip, .fullscreen]
+        [.speedUp(), .slowDown(), .setRate(), .showRate, .playOrPause, .skipForward(), .skipBackward(), .skipToEnd, .toggleMute, .pip, .fullscreen, .loop]
     }
 
     static var rateFormatter: NumberFormatter {
@@ -176,6 +181,7 @@ extension Shortcut.Action: CaseIterable, CustomStringConvertible, CustomDebugStr
         case .toggleMute: "Toggle Mute"
         case .pip: "Toggle Picture in Picture"
         case .fullscreen: "Toggle Fullscreen"
+        case .loop: "Toggle Looping"
         }
     }
 
@@ -192,6 +198,7 @@ extension Shortcut.Action: CaseIterable, CustomStringConvertible, CustomDebugStr
         case .toggleMute: "toggleMute"
         case .pip: "pip"
         case .fullscreen: "toggleFullscreen"
+        case .loop: "toggleLoop"
         }
     }
 
@@ -208,6 +215,7 @@ extension Shortcut.Action: CaseIterable, CustomStringConvertible, CustomDebugStr
         case .toggleMute: 8
         case .pip: 9
         case .fullscreen: 10
+        case .loop: 11
         }
     }
 
