@@ -313,13 +313,13 @@
 			children = (
 				3572ACC8283AD7EB00D902A1 /* backward.svg */,
 				3572ACCC283AD7EB00D902A1 /* forward.svg */,
-				3572ACC7283AD7EB00D902A1 /* play.svg */,
-				3572ACCB283AD7EB00D902A1 /* pause.svg */,
-				3572ACC5283AD7EB00D902A1 /* skip.svg */,
-				3572ACCA283AD7EB00D902A1 /* mute.svg */,
-				3572ACC6283AD7EB00D902A1 /* unmute.svg */,
-				3572ACC9283AD7EB00D902A1 /* pip.svg */,
 				35F620352C4D507300965225 /* loop.svg */,
+				3572ACCA283AD7EB00D902A1 /* mute.svg */,
+				3572ACCB283AD7EB00D902A1 /* pause.svg */,
+				3572ACC9283AD7EB00D902A1 /* pip.svg */,
+				3572ACC7283AD7EB00D902A1 /* play.svg */,
+				3572ACC5283AD7EB00D902A1 /* skip.svg */,
+				3572ACC6283AD7EB00D902A1 /* unmute.svg */,
 			);
 			name = snackbar;
 			path = ../../Web/snackbar;

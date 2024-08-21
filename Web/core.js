@@ -174,6 +174,11 @@ function triggerAction(shortcut, event) {
             } else if (document.exitFullscreen) {
                 activeVideo.webkitExitFullscreen();
             }
+            return;
+        case "toggleLoop":
+            activeVideo.loop = !activeVideo.loop;
+            if (shortcut.showSnackbar) showSnackbar("loop");
+            return;
         default:
             break;
     }

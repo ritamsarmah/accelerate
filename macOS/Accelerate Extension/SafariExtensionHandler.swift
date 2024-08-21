@@ -13,7 +13,7 @@ import SafariServices
 class SafariExtensionHandler: SFSafariExtensionHandler {
 
     private static var snackbarIcons: [String: String] = {
-        let filenames = ["backward", "forward", "mute", "pause", "pip", "play", "skip", "unmute"]
+        let filenames = ["backward", "forward", "loop", "mute", "pause", "pip", "play", "skip", "unmute"]
         var icons = [String: String]()
 
         for filename in filenames {

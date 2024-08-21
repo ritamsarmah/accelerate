@@ -232,7 +232,7 @@ class ShortcutViewController: NSViewController {
             }
         }
 
-        // Show rate will always shown snackbar
+        // Show rate will always show snackbar
         // Disable snackbar for fullscreen since animation is laggy
         showSnackbarCheckbox.isHidden = [.showRate, .fullscreen].contains(action)
     }
