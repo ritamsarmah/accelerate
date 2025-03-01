@@ -117,13 +117,8 @@ class TutorialViewController: NSViewController {
             subtitleLabel.stringValue = "Accelerate is a powerful, fully customizable Safari extension for controlling video playback and speed."
 
         case .shortcuts:
-            if PreferenceMigrator.shared.isLegacyDefaultsEmpty {
-                titleLabel.stringValue = "Keyboard Shortcuts"
-                subtitleLabel.stringValue = "Control videos across your favorite websites with your keyboard. Use the default shortcuts, or create and customize your own."
-            } else {
-                titleLabel.stringValue = "Migrate Existing Preferences"
-                subtitleLabel.stringValue = "This version includes a re-designed interface and options for shortcuts and settings. Your existing preferences will be migrated."
-            }
+            titleLabel.stringValue = "Keyboard Shortcuts"
+            subtitleLabel.stringValue = "Control videos across your favorite websites with your keyboard. Use the default shortcuts, or create and customize your own."
 
         case .enable:
             nextButton.isEnabled = true

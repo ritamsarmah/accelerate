@@ -44,7 +44,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         StoreManager.shared.completeTransactions()
 
         if Defaults[.launchCount] == 0 {
-            PreferenceMigrator.shared.migrate()
             showTutorialWindow()
         } else {
             preferencesWindowController.show(preferencePane: .general)

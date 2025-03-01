@@ -20,8 +20,6 @@
 		204F31F625D9EB2B0040A0E8 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F31F525D9EB2B0040A0E8 /* Shortcut.swift */; };
 		204F31F725D9EB2B0040A0E8 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F31F525D9EB2B0040A0E8 /* Shortcut.swift */; };
 		208023D522AB527000F175A5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208023D422AB527000F175A5 /* StoreKit.framework */; };
-		2097C56225D9F5B500279123 /* PreferenceMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C56125D9F5B500279123 /* PreferenceMigrator.swift */; };
-		2097C56325D9F5B500279123 /* PreferenceMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C56125D9F5B500279123 /* PreferenceMigrator.swift */; };
 		2097C59625DE07E200279123 /* BlocklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59525DE07E200279123 /* BlocklistViewController.swift */; };
 		2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59925DE080500279123 /* ShortcutsViewController.swift */; };
 		2097C5A225DE085D00279123 /* EditableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C5A125DE085D00279123 /* EditableTableView.swift */; };
@@ -122,7 +120,6 @@
 		204980C1227F90BF0031C167 /* Defaults+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Defaults+Keys.swift"; sourceTree = "<group>"; };
 		204F31F525D9EB2B0040A0E8 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		208023D422AB527000F175A5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		2097C56125D9F5B500279123 /* PreferenceMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMigrator.swift; sourceTree = "<group>"; };
 		2097C59525DE07E200279123 /* BlocklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistViewController.swift; sourceTree = "<group>"; };
 		2097C59925DE080500279123 /* ShortcutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsViewController.swift; sourceTree = "<group>"; };
 		2097C5A125DE085D00279123 /* EditableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTableView.swift; sourceTree = "<group>"; };
@@ -275,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				3572AC72283A9EE500D902A1 /* Log.swift */,
-				2097C56125D9F5B500279123 /* PreferenceMigrator.swift */,
 				204F31F525D9EB2B0040A0E8 /* Shortcut.swift */,
 				3572AC71283A9EE500D902A1 /* SnackbarLocation.swift */,
 				351AB4A22691182E007E429A /* StoreManager.swift */,
@@ -544,7 +540,6 @@
 				204980C2227F90BF0031C167 /* Defaults+Keys.swift in Sources */,
 				204F31F625D9EB2B0040A0E8 /* Shortcut.swift in Sources */,
 				2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */,
-				2097C56225D9F5B500279123 /* PreferenceMigrator.swift in Sources */,
 				358908A6283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */,
 				358908AA283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */,
 			);
@@ -563,7 +558,6 @@
 				35F17C3B2B7818B000C640B9 /* Safari+Extensions.swift in Sources */,
 				2038D4E7220EA4F100E8A9FE /* SafariExtensionViewController.swift in Sources */,
 				2038D4E5220EA4F100E8A9FE /* SafariExtensionHandler.swift in Sources */,
-				2097C56325D9F5B500279123 /* PreferenceMigrator.swift in Sources */,
 				358908A9283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */,
 				3572AC76283A9EE500D902A1 /* Log.swift in Sources */,
 				204F31F725D9EB2B0040A0E8 /* Shortcut.swift in Sources */,
