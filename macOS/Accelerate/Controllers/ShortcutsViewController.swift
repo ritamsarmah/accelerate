@@ -16,12 +16,7 @@ class ShortcutsViewController: NSViewController, SettingsPane {
 
     let paneIdentifier = Settings.PaneIdentifier.shortcuts
     let paneTitle = "Shortcuts"
-    let toolbarItemIcon: NSImage =
-        if #available(macOS 11.0, *) {
-            .init(systemSymbolName: "keyboard", accessibilityDescription: "Shortcuts")!
-        } else {
-            .init(named: NSImage.preferencesGeneralName)!  // unused
-        }
+    let toolbarItemIcon = NSImage(systemSymbolName: "keyboard", accessibilityDescription: "Shortcuts")!
 
     override var nibName: NSNib.Name? { "ShortcutsViewController" }
 
@@ -162,13 +157,8 @@ class ShortcutsViewController: NSViewController, SettingsPane {
             self.shortcutTableView.reload()
 
             // NOTE: Don't use NSPopUpButton.addItems(withTitles:) since it will remove duplicate titles
-            // Also don't use the `items` property since it is not available prior to macOS 10.14
-            let items =
-                [NSMenuItem(title: "None", action: nil, keyEquivalent: "")]
+            self.toolbarShortcutButton.menu?.items = [NSMenuItem(title: "None", action: nil, keyEquivalent: "")]
                 + Defaults[.shortcuts].map { NSMenuItem(title: $0.action.description, action: nil, keyEquivalent: "") }
-
-            self.toolbarShortcutButton.menu?.removeAllItems()
-            items.forEach { self.toolbarShortcutButton.menu?.addItem($0) }
 
             self.toolbarShortcutButton.selectItem(at: (Defaults[.shortcuts].toolbarShortcutIndex ?? -1) + 1)
         }
@@ -277,9 +267,9 @@ extension ShortcutsViewController: NSTableViewDataSource, NSTableViewDelegate {
 
         case Identifier.optionsColumn:
             let images = [
-                NSImage(named: .bell)!.tinted(if: shortcut.showSnackbar),
-                NSImage(named: .contextualMenu)!.tinted(if: shortcut.showInContextMenu),
-                NSImage(named: .globe)!.tinted(if: shortcut.isGlobal),
+                NSImage(systemSymbolName: "bell.fill", accessibilityDescription: "Notification")!.tinted(if: shortcut.showSnackbar),
+                NSImage(systemSymbolName: "contextualmenu.and.cursorarrow", accessibilityDescription: "Context Menu")!.tinted(if: shortcut.showInContextMenu),
+                NSImage(systemSymbolName: "globe", accessibilityDescription: "Global Shortcut")!.tinted(if: shortcut.isGlobal),
             ]
 
             let stackView = tableView.dequeueReusableView(withIdentifier: Identifier.optionsColumn, for: row) {

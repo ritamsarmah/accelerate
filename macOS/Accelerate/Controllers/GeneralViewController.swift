@@ -18,12 +18,7 @@ class GeneralViewController: NSViewController, SettingsPane {
 
     let paneIdentifier = Settings.PaneIdentifier.general
     let paneTitle = "General"
-    let toolbarItemIcon: NSImage =
-        if #available(macOS 11.0, *) {
-            .init(systemSymbolName: "gearshape", accessibilityDescription: "General")!
-        } else {
-            .init(named: NSImage.preferencesGeneralName)!  // unused
-        }
+    let toolbarItemIcon = NSImage(systemSymbolName: "gearshape", accessibilityDescription: "General")!
 
     override var nibName: NSNib.Name? { "GeneralViewController" }
 
@@ -120,19 +115,6 @@ class GeneralViewController: NSViewController, SettingsPane {
         defaultRateTextField.doubleValue = Defaults[.defaultRate]
         minimumRateTextField.doubleValue = Defaults[.minimumRate]
         maximumRateTextField.doubleValue = Defaults[.maximumRate]
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        if #available(macOS 10.14, *) {
-            // Nothing needed for 10.14+
-        } else {
-            // High Sierra requires explicit height constraints to avoid stretching
-            view.layoutSubtreeIfNeeded()
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[gridView(\(gridView.frame.height))]", options: [], metrics: nil, views: bindings))
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[buttonStackView(\(buttonStackView.frame.height))]", options: [], metrics: nil, views: bindings))
-        }
     }
 
     // MARK: - Actions

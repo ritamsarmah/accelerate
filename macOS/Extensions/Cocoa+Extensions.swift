@@ -131,12 +131,7 @@ extension NSAlert {
 
 extension NSImage {
     func tinted(if condition: Bool) -> NSImage {
-        let color: NSColor =
-            if #available(macOS 10.14, *) {
-                condition ? .controlAccentColor : .gray
-            } else {
-                condition ? .systemBlue : .gray
-            }
+        let color: NSColor = condition ? .controlAccentColor : .gray
 
         guard let tinted = copy() as? NSImage else { return self }
         tinted.lockFocus()
@@ -151,40 +146,13 @@ extension NSImage {
     }
 }
 
-// Symbol images only work on 11.0+, use PNGs otherwise (13pt size)
-extension NSImage.Name {
-    static let bell: NSImage.Name =
-        if #available(macOS 11.0, *) {
-            .init("bell-symbol")
-        } else {
-            .init("bell")
-        }
-
-    static let contextualMenu: NSImage.Name =
-        if #available(macOS 11.0, *) {
-            .init("contextualmenu-symbol")
-        } else {
-            .init("contextualmenu")
-        }
-
-    static let globe: NSImage.Name =
-        if #available(macOS 11.0, *) {
-            .init("globe-symbol")
-        } else {
-            .init("globe")
-        }
-}
-
 extension NSButton {
     static func untitledCheckbox(target: Any? = nil, action: Selector? = nil) -> NSButton {
-        let checkbox = NSButton(checkboxWithTitle: "", target: target, action: action)
-        checkbox.title = ""  // We need to explicitly set the checkbox title to empty string for macOS 10.13
-        return checkbox
+        return NSButton(checkboxWithTitle: "", target: target, action: action)
     }
 
     static func helpButton(target: Any? = nil, action: Selector? = nil) -> NSButton {
         let helpButton = NSButton(title: "", target: target, action: action)
-        helpButton.title = ""  // We need to explicitly set the button title to empty string for macOS 10.13
         helpButton.bezelStyle = .helpButton
         helpButton.setAccessibilityLabel("Help")
         return helpButton

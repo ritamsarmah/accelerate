@@ -26,16 +26,10 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo _: [String: Any]?) {
         switch messageName {
         case "shouldInitialize":
-            // If app has not been launched yet, show tutorial window (and migrate existing preferences)
+            // If app has not been launched yet, show tutorial window
             if Defaults[.launchCount] == 0 {
                 let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.ritamsarmah.Accelerate")!
-
-                if #available(macOSApplicationExtension 10.15, *) {
-                    NSWorkspace.shared.openApplication(at: url, configuration: NSWorkspace.OpenConfiguration())
-                } else {
-                    NSWorkspace.shared.open(url)
-                }
-
+                NSWorkspace.shared.open(url)
                 page.dispatchMessageToScript(withName: "upgrade", userInfo: nil)
             }
 

@@ -23,13 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet private var window: NSWindow!
 
-    var settingsStyle: Settings.Style {
-        if #available(macOS 11.0, *) {
-            .toolbarItems
-        } else {
-            .segmentedControl
-        }
-    }
+    var settingsStyle: Settings.Style { .toolbarItems }
 
     lazy var settingsWindowController = SettingsWindowController(
         panes: [
@@ -51,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         Defaults[.launchCount] += 1
 
-        if #available(macOS 10.14, *), Defaults[.launchCount] == 5 {
+        if Defaults[.launchCount] == 5 {
             SKStoreReviewController.requestReview()
         }
     }

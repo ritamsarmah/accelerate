@@ -16,12 +16,7 @@ class BlocklistViewController: NSViewController, SettingsPane {
 
     let paneIdentifier = Settings.PaneIdentifier.blocklist
     let paneTitle = "Blocklist"
-    let toolbarItemIcon: NSImage =
-        if #available(macOS 11.0, *) {
-            .init(systemSymbolName: "hand.raised", accessibilityDescription: "Blocklist")!
-        } else {
-            .init(named: NSImage.preferencesGeneralName)!  // unused
-        }
+    let toolbarItemIcon = NSImage(systemSymbolName: "hand.raised", accessibilityDescription: "Blocklist")!
 
     override var nibName: NSNib.Name? { "BlocklistViewController" }
 
@@ -67,10 +62,7 @@ class BlocklistViewController: NSViewController, SettingsPane {
         blocklistTableView.tableView.registerForDraggedTypes([.string])
         blocklistTableView.tableView.headerView = nil
         blocklistTableView.tableView.setAccessibilityLabel("Blocklist")
-
-        if #available(macOS 11.0, *) {
-            blocklistTableView.tableView.style = .plain
-        }
+        blocklistTableView.tableView.style = .plain
 
         let blocklistTableViewColumn = NSTableColumn(identifier: Identifier.ruleColumn)
         blocklistTableView.tableView.addTableColumn(blocklistTableViewColumn)
