@@ -60,20 +60,16 @@ extension TipView {
                     let transaction = try verifyTransaction(verification)
 
                     // Show confetti to user
-                    DispatchQueue.main.async {
-                        self.isPurchasing = false
-                        self.confettiCounter += 1
-                    }
+                    self.isPurchasing = false
+                    self.confettiCounter += 1
 
                     await transaction.finish()
                 default:
-                    DispatchQueue.main.async { self.isPurchasing = false }
+                    self.isPurchasing = false
                 }
             } catch {
-                DispatchQueue.main.async {
-                    self.isPurchasing = false
-                    AlertInfo.showAlert(.tipPurchaseFailed(error: error))
-                }
+                self.isPurchasing = false
+                AlertInfo.showAlert(.tipPurchaseFailed(error: error))
             }
         }
 

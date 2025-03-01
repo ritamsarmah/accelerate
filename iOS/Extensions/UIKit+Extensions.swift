@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIKeyModifierFlags: Decodable {
+extension UIKeyModifierFlags: @retroactive Decodable {
     public init(from decoder: Decoder) throws {
         try self.init(rawValue: decoder.singleValueContainer().decode(Int.self))
     }

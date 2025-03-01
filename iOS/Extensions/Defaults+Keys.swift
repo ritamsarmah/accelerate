@@ -14,5 +14,5 @@ extension Defaults {
 
 extension Defaults.Keys {
     // Array of shortcut preference keys
-    static let allShortcutKeys: [Defaults.AnyKey] = [.shortcuts]
+    static let allShortcutKeys: [Defaults.Keys] = [.shortcuts]
 }

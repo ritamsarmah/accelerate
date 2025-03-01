@@ -9,15 +9,15 @@
 import Cocoa
 import Defaults
 import MASShortcut
-import Preferences
+import Settings
 import SafariServices.SFSafariApplication
 
-class GeneralViewController: NSViewController, PreferencePane {
+class GeneralViewController: NSViewController, SettingsPane {
 
     // MARK: - PreferencePane
 
-    let preferencePaneIdentifier = Preferences.PaneIdentifier.general
-    let preferencePaneTitle = "General"
+    let paneIdentifier = Settings.PaneIdentifier.general
+    let paneTitle = "General"
     let toolbarItemIcon: NSImage =
         if #available(macOS 11.0, *) {
             .init(systemSymbolName: "gearshape", accessibilityDescription: "General")!

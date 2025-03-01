@@ -24,9 +24,6 @@
          location = "group:Defaults+Shared.swift">
       </FileRef>
       <FileRef
-         location = "group:Defaults+Workaround.swift">
-      </FileRef>
-      <FileRef
          location = "group:Shortcut+Action.swift">
       </FileRef>
       <FileRef

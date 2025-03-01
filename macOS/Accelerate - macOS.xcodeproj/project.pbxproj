@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20133C2B2D7383920067AE2F /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 20133C2A2D7383920067AE2F /* Settings */; };
 		2038D4CF220EA4F000E8A9FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038D4CE220EA4F000E8A9FE /* AppDelegate.swift */; };
 		2038D4D4220EA4F000E8A9FE /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038D4D3220EA4F000E8A9FE /* GeneralViewController.swift */; };
 		2038D4D6220EA4F100E8A9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2038D4D5220EA4F100E8A9FE /* Assets.xcassets */; };
@@ -31,7 +32,6 @@
 		3545C5FB2839C2BC00989463 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 3545C5FA2839C2BC00989463 /* MASShortcut */; };
 		3545C5FD2839C2C800989463 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 3545C5FC2839C2C800989463 /* MASShortcut */; };
 		356B33D626D2D4C2006CDADB /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 356B33D526D2D4C2006CDADB /* Defaults */; };
-		356B33D926D2D53B006CDADB /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 356B33D826D2D53B006CDADB /* Preferences */; };
 		356B33DC26D2D582006CDADB /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 356B33DB26D2D582006CDADB /* SwiftyStoreKit */; };
 		356B33DE26D2D98F006CDADB /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 356B33DD26D2D98F006CDADB /* Defaults */; };
 		3572AC73283A9EE500D902A1 /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC71283A9EE500D902A1 /* SnackbarLocation.swift */; };
@@ -56,8 +56,6 @@
 		358908A7283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A2283AE0C900F40CD7 /* Defaults+Shared.swift */; };
 		358908A8283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A3283AE0C900F40CD7 /* Shortcut+Action.swift */; };
 		358908A9283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A3283AE0C900F40CD7 /* Shortcut+Action.swift */; };
-		358908AA283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */; };
-		358908AB283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */; };
 		358908AC283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */; };
 		358908AD283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */; };
 		359951C926D2EB7D004D8C08 /* AccelerateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359951C826D2EB7D004D8C08 /* AccelerateTests.swift */; };
@@ -145,7 +143,6 @@
 		3572ACE6283ADE4E00D902A1 /* toolbar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = toolbar.pdf; sourceTree = "<group>"; };
 		358908A2283AE0C900F40CD7 /* Defaults+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Shared.swift"; path = "../../Extensions/Defaults+Shared.swift"; sourceTree = "<group>"; };
 		358908A3283AE0C900F40CD7 /* Shortcut+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Shortcut+Action.swift"; path = "../../Extensions/Shortcut+Action.swift"; sourceTree = "<group>"; };
-		358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Workaround.swift"; path = "../../Extensions/Defaults+Workaround.swift"; sourceTree = "<group>"; };
 		358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Swift+Extensions.swift"; path = "../../Extensions/Swift+Extensions.swift"; sourceTree = "<group>"; };
 		359951C626D2EB7D004D8C08 /* AccelerateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccelerateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		359951C826D2EB7D004D8C08 /* AccelerateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerateTests.swift; sourceTree = "<group>"; };
@@ -166,8 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3545C5FB2839C2BC00989463 /* MASShortcut in Frameworks */,
+				20133C2B2D7383920067AE2F /* Settings in Frameworks */,
 				356B33D626D2D4C2006CDADB /* Defaults in Frameworks */,
-				356B33D926D2D53B006CDADB /* Preferences in Frameworks */,
 				208023D522AB527000F175A5 /* StoreKit.framework in Frameworks */,
 				356B33DC26D2D582006CDADB /* SwiftyStoreKit in Frameworks */,
 			);
@@ -324,7 +321,6 @@
 				20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */,
 				204980C1227F90BF0031C167 /* Defaults+Keys.swift */,
 				358908A2283AE0C900F40CD7 /* Defaults+Shared.swift */,
-				358908A4283AE0C900F40CD7 /* Defaults+Workaround.swift */,
 				35F17C392B7818B000C640B9 /* Safari+Extensions.swift */,
 				358908A3283AE0C900F40CD7 /* Shortcut+Action.swift */,
 				358908A5283AE0C900F40CD7 /* Swift+Extensions.swift */,
@@ -362,9 +358,9 @@
 			name = Accelerate;
 			packageProductDependencies = (
 				356B33D526D2D4C2006CDADB /* Defaults */,
-				356B33D826D2D53B006CDADB /* Preferences */,
 				356B33DB26D2D582006CDADB /* SwiftyStoreKit */,
 				3545C5FA2839C2BC00989463 /* MASShortcut */,
+				20133C2A2D7383920067AE2F /* Settings */,
 			);
 			productName = Accelerate;
 			productReference = 2038D4C9220EA4F000E8A9FE /* Accelerate.app */;
@@ -458,7 +454,7 @@
 			mainGroup = 2038D4C0220EA4F000E8A9FE;
 			packageReferences = (
 				356B33D426D2D4C2006CDADB /* XCRemoteSwiftPackageReference "Defaults" */,
-				356B33D726D2D53B006CDADB /* XCRemoteSwiftPackageReference "Preferences" */,
+				356B33D726D2D53B006CDADB /* XCRemoteSwiftPackageReference "Settings" */,
 				356B33DA26D2D582006CDADB /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				3545C5F92839C2BC00989463 /* XCRemoteSwiftPackageReference "MASShortcut" */,
 			);
@@ -541,7 +537,6 @@
 				204F31F625D9EB2B0040A0E8 /* Shortcut.swift in Sources */,
 				2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */,
 				358908A6283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */,
-				358908AA283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +547,6 @@
 				20BD458A231F0A850009CC82 /* Cocoa+Extensions.swift in Sources */,
 				204980C3227F90BF0031C167 /* Defaults+Keys.swift in Sources */,
 				358908A7283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */,
-				358908AB283AE0C900F40CD7 /* Defaults+Workaround.swift in Sources */,
 				358908AD283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */,
 				3572AC74283A9EE500D902A1 /* SnackbarLocation.swift in Sources */,
 				35F17C3B2B7818B000C640B9 /* Safari+Extensions.swift in Sources */,
@@ -917,15 +911,15 @@
 			repositoryURL = "git@github.com:sindresorhus/Defaults.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 9.0.0;
 			};
 		};
-		356B33D726D2D53B006CDADB /* XCRemoteSwiftPackageReference "Preferences" */ = {
+		356B33D726D2D53B006CDADB /* XCRemoteSwiftPackageReference "Settings" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:sindresorhus/Preferences.git";
+			repositoryURL = "git@github.com:sindresorhus/Settings.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 3.0.0;
 			};
 		};
 		356B33DA26D2D582006CDADB /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
@@ -939,6 +933,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		20133C2A2D7383920067AE2F /* Settings */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 356B33D726D2D53B006CDADB /* XCRemoteSwiftPackageReference "Settings" */;
+			productName = Settings;
+		};
 		3545C5FA2839C2BC00989463 /* MASShortcut */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3545C5F92839C2BC00989463 /* XCRemoteSwiftPackageReference "MASShortcut" */;
@@ -953,11 +952,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 356B33D426D2D4C2006CDADB /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
-		};
-		356B33D826D2D53B006CDADB /* Preferences */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 356B33D726D2D53B006CDADB /* XCRemoteSwiftPackageReference "Preferences" */;
-			productName = Preferences;
 		};
 		356B33DB26D2D582006CDADB /* SwiftyStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;

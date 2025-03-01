@@ -224,10 +224,10 @@ class ShortcutViewController: NSViewController {
                 switch action {
                 case .setRate:
                     // Default rate allows for empty text field...
-                    saveButton.isEnabled = saveButton.isEnabled && (!valueTextField.objectValue.isNil || valueTextField.stringValue.isEmpty)
+                    saveButton.isEnabled = saveButton.isEnabled && (valueTextField.objectValue != nil || valueTextField.stringValue.isEmpty)
                 default:
                     // ...any others require a valid, non-empty value
-                    saveButton.isEnabled = saveButton.isEnabled && !valueTextField.objectValue.isNil
+                    saveButton.isEnabled = saveButton.isEnabled && valueTextField.objectValue != nil
                 }
             }
         }

@@ -9,10 +9,10 @@
 import Cocoa
 import Defaults
 import MASShortcut
-import Preferences
+import Settings
 import StoreKit
 
-extension Preferences.PaneIdentifier {
+extension Settings.PaneIdentifier {
     static let general = Self("general")
     static let shortcuts = Self("shortcuts")
     static let blocklist = Self("blocklist")
@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet private var window: NSWindow!
 
-    var preferencesStyle: Preferences.Style {
+    var settingsStyle: Settings.Style {
         if #available(macOS 11.0, *) {
             .toolbarItems
         } else {
@@ -31,13 +31,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    lazy var preferencesWindowController = PreferencesWindowController(
-        preferencePanes: [
+    lazy var settingsWindowController = SettingsWindowController(
+        panes: [
             GeneralViewController(),
             ShortcutsViewController(),
             BlocklistViewController(),
         ],
-        style: preferencesStyle
+        style: settingsStyle
     )
 
     func applicationDidFinishLaunching(_: Notification) {
@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if Defaults[.launchCount] == 0 {
             showTutorialWindow()
         } else {
-            preferencesWindowController.show(preferencePane: .general)
+            settingsWindowController.show(pane: .general)
         }
 
         Defaults[.launchCount] += 1

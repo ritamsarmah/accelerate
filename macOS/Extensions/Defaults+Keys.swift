@@ -19,7 +19,7 @@ extension Defaults.Keys {
     static let toolbarShortcutIdentifier = Key<String?>("toolbarShortcut", default: "FF7BF0BE-5DDC-4FFE-84CF-F5056A993A1A", suite: Defaults.suite)
 
     // Array of shortcut preference keys
-    static let allShortcutKeys: [Defaults.AnyKey] = [.shortcuts, .toolbarShortcutIdentifier]
+    static let allShortcutKeys: [Defaults.Keys] = [.shortcuts, .toolbarShortcutIdentifier]
 }
 
 extension [Shortcut] {

@@ -42,8 +42,6 @@
 		3572AC84283A9F6800D902A1 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */; };
 		3572AC85283A9F6800D902A1 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */; };
 		3572AC86283A9F6800D902A1 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */; };
-		3572AC87283A9F6800D902A1 /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC81283A9F6800D902A1 /* Defaults+Workaround.swift */; };
-		3572AC88283A9F6800D902A1 /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC81283A9F6800D902A1 /* Defaults+Workaround.swift */; };
 		3572AC89283A9F6800D902A1 /* Defaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC82283A9F6800D902A1 /* Defaults+Shared.swift */; };
 		3572AC8A283A9F6800D902A1 /* Defaults+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC82283A9F6800D902A1 /* Defaults+Shared.swift */; };
 		3572ACB7283AC94700D902A1 /* utils.js in Resources */ = {isa = PBXBuildFile; fileRef = 3572ACB3283AC94700D902A1 /* utils.js */; };
@@ -126,7 +124,6 @@
 		3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnackbarLocation.swift; path = ../../Common/SnackbarLocation.swift; sourceTree = "<group>"; };
 		3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Swift+Extensions.swift"; path = "../../Extensions/Swift+Extensions.swift"; sourceTree = "<group>"; };
 		3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Shortcut+Action.swift"; path = "../../Extensions/Shortcut+Action.swift"; sourceTree = "<group>"; };
-		3572AC81283A9F6800D902A1 /* Defaults+Workaround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Workaround.swift"; path = "../../Extensions/Defaults+Workaround.swift"; sourceTree = "<group>"; };
 		3572AC82283A9F6800D902A1 /* Defaults+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Shared.swift"; path = "../../Extensions/Defaults+Shared.swift"; sourceTree = "<group>"; };
 		3572ACB3283AC94700D902A1 /* utils.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = utils.js; path = ../../../Web/utils.js; sourceTree = "<group>"; };
 		3572ACBA283ACA8400D902A1 /* snackbar.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = snackbar.css; path = ../../../Web/snackbar.css; sourceTree = "<group>"; };
@@ -250,7 +247,6 @@
 			children = (
 				35A4EC7C26EA6116006CB45B /* Defaults+Keys.swift */,
 				3572AC82283A9F6800D902A1 /* Defaults+Shared.swift */,
-				3572AC81283A9F6800D902A1 /* Defaults+Workaround.swift */,
 				3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */,
 				3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */,
 				35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */,
@@ -378,7 +374,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					353EB09F26D34F4B00ECC91F = {
 						CreatedOnToolsVersion = 13.0;
@@ -465,7 +461,6 @@
 				35AF244B27053177005F5FB0 /* ShortcutDetailViewModel.swift in Sources */,
 				35C603B22776B1B60001550E /* BlocklistViewModel.swift in Sources */,
 				35A4EC8326EA65CA006CB45B /* BlocklistView.swift in Sources */,
-				3572AC87283A9F6800D902A1 /* Defaults+Workaround.swift in Sources */,
 				35643ED5283595B80062CA49 /* TipView.swift in Sources */,
 				353EB0AE26D34F4C00ECC91F /* SceneDelegate.swift in Sources */,
 				3572AC7B283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */,
@@ -490,7 +485,6 @@
 				3572AC7C283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */,
 				353EB0D726D34F4D00ECC91F /* SafariWebExtensionHandler.swift in Sources */,
 				3572AC8A283A9F6800D902A1 /* Defaults+Shared.swift in Sources */,
-				3572AC88283A9F6800D902A1 /* Defaults+Workaround.swift in Sources */,
 				3572AC7A283A9EEF00D902A1 /* Log.swift in Sources */,
 				3572AC86283A9F6800D902A1 /* Shortcut+Action.swift in Sources */,
 				35A97BF626E2995400299FC0 /* Shortcut.swift in Sources */,
@@ -713,7 +707,6 @@
 		353EB0F226D34F4D00ECC91F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Accelerate/Accelerate.entitlements;
@@ -755,7 +748,6 @@
 		353EB0F326D34F4D00ECC91F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Accelerate/Accelerate.entitlements;
@@ -832,7 +824,7 @@
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 9.0.0;
 			};
 		};
 		355565E12835D8230023BD88 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {

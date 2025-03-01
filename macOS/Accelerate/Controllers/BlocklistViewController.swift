@@ -8,14 +8,14 @@
 
 import Cocoa
 import Defaults
-import Preferences
+import Settings
 
-class BlocklistViewController: NSViewController, PreferencePane {
+class BlocklistViewController: NSViewController, SettingsPane {
 
     // MARK: - PreferencePane
 
-    let preferencePaneIdentifier = Preferences.PaneIdentifier.blocklist
-    let preferencePaneTitle = "Blocklist"
+    let paneIdentifier = Settings.PaneIdentifier.blocklist
+    let paneTitle = "Blocklist"
     let toolbarItemIcon: NSImage =
         if #available(macOS 11.0, *) {
             .init(systemSymbolName: "hand.raised", accessibilityDescription: "Blocklist")!
@@ -33,7 +33,7 @@ class BlocklistViewController: NSViewController, PreferencePane {
     private var invertBlocklistCheckBox: NSButton!
     private var blocklistTableView: EditableTableView!
 
-    private var blocklistObserver: DefaultsObservation?
+    private var blocklistObserver: Defaults.Observation?
 
     private enum Identifier {
         static let ruleColumn = NSUserInterfaceItemIdentifier(rawValue: "RuleColumn")

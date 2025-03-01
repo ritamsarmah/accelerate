@@ -8,14 +8,14 @@
 
 import Cocoa
 import Defaults
-import Preferences
+import Settings
 
-class ShortcutsViewController: NSViewController, PreferencePane {
+class ShortcutsViewController: NSViewController, SettingsPane {
 
     // MARK: - PreferencePane
 
-    let preferencePaneIdentifier = Preferences.PaneIdentifier.shortcuts
-    let preferencePaneTitle = "Shortcuts"
+    let paneIdentifier = Settings.PaneIdentifier.shortcuts
+    let paneTitle = "Shortcuts"
     let toolbarItemIcon: NSImage =
         if #available(macOS 11.0, *) {
             .init(systemSymbolName: "keyboard", accessibilityDescription: "Shortcuts")!
@@ -38,7 +38,7 @@ class ShortcutsViewController: NSViewController, PreferencePane {
 
     private var restoreButton: NSButton!
 
-    private var shortcutsObserver: DefaultsObservation?
+    private var shortcutsObserver: Defaults.Observation?
 
     private enum Identifier {
         static let isEnabledColumn = NSUserInterfaceItemIdentifier(rawValue: "IsEnabledColumn")

@@ -35,6 +35,6 @@ extension Defaults.Keys {
     static let isBlocklistInverted = Key<Bool>("isBlocklistInverted", default: false, suite: Defaults.suite)
 
     // Array of general preference keys
-    static let allGeneralKeys: [Defaults.AnyKey] = [.defaultRate, .minimumRate, .maximumRate, .snackbarLocation]
+    static let allGeneralKeys: [Defaults.Keys] = [.defaultRate, .minimumRate, .maximumRate, .snackbarLocation]
 
 }

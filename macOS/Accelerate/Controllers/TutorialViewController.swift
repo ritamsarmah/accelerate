@@ -135,7 +135,7 @@ class TutorialViewController: NSViewController {
         case .exit:
             DispatchQueue.main.async {
                 self.view.window?.orderOut(nil)
-                (NSApplication.shared.delegate as! AppDelegate).preferencesWindowController.show(preferencePane: .general)
+                (NSApplication.shared.delegate as! AppDelegate).settingsWindowController.show(pane: .general)
             }
         }
     }
