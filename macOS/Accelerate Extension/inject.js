@@ -9,6 +9,7 @@
 /* Global Variables */
 
 var snackbarIcons = {}; // Cached SVGs for icons retrieved from extension
+var contextMenuShortcuts = []; // Cached context menu shortcuts
 
 /* Event Listeners */
 
@@ -38,8 +39,11 @@ safari.self.addEventListener("message", event => {
             `Accelerate has been upgraded to a new major version. Opening main application...`
         );
     } else if (event.name === "triggerAction" && initialized) {
-        // Actions could be externally triggered by global shortcut, toolbar button, or context menu. Check initialization to avoid triggering actions before extension is ready.
+        // Actions could be externally triggered by global shortcut or toolbar button.
+        // Check initialization to avoid triggering actions before extension is ready.
         triggerAction(event.message.shortcut);
+    } else if (event.name === "triggerContextMenuAction" && initialized) {
+        triggerAction(contextMenuShortcuts[event.message.index]);
     }
 });
 
@@ -48,16 +52,31 @@ safari.self.addEventListener("message", event => {
 function initialize(settings) {
     _initialize(settings);
     snackbarIcons = settings.snackbarIcons;
+    contextMenuShortcuts = settings.shortcuts.filter(
+        shortcut => shortcut.showInContextMenu
+    );
 
-    // Add contextmenu listener
+    // Add context menu listener
     document.addEventListener(
         "contextmenu",
         event => {
-            safari.extension.setContextMenuEventUserInfo(event, {
-                isInitialized: initialized,
-                hasVideos: hasVideos,
-                currentRate: currentRate
-            });
+            if (!initialized || !hasVideos) {
+                safari.extension.setContextMenuEventUserInfo(event, null);
+            } else {
+                // Convert for extension handler to validate with "command" (index)
+                const userInfo = {};
+                contextMenuShortcuts.forEach((shortcut, index) => {
+                    // Hide setRate items if current rate matches
+                    if (
+                        shortcut.action !== "setRate" ||
+                        (shortcut.rate ?? defaultRate) !== currentRate
+                    ) {
+                        userInfo[index] = shortcut.description;
+                    }
+                });
+
+                safari.extension.setContextMenuEventUserInfo(event, userInfo);
+            }
         },
         false
     );

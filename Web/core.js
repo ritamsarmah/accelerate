@@ -101,7 +101,7 @@ function triggerAction(shortcut, event) {
         event.stopPropagation();
     }
 
-    logger.d("Action triggered", shortcut.description);
+    logger.d("Action triggered", shortcut.description, shortcut.keyCombo);
 
     // Actions independent of active video
     switch (shortcut.action) {

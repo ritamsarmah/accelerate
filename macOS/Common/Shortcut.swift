@@ -59,6 +59,7 @@ struct Shortcut: Codable, Defaults.Serializable {
             "isEnabled": isEnabled,
             "isGlobal": isGlobal,
             "showSnackbar": showSnackbar,
+            "showInContextMenu": showInContextMenu,
             "description": description,
         ].merging(action.dictionaryRepresentation) { current, _ in current }
     }
@@ -68,9 +69,7 @@ struct Shortcut: Codable, Defaults.Serializable {
 
 /// Based on https://github.com/sindresorhus/KeyboardShortcuts/blob/main/Sources/KeyboardShortcuts/Shortcut.swift
 extension Shortcut: CustomStringConvertible {
-    var description: String {
-        "\(action) - \(keyComboString)"
-    }
+    var description: String { action.description }
 
     var keyComboString: String {
         "\(modifiers)\(keyEquivalent)"

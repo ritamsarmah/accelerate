@@ -56,9 +56,7 @@ struct Shortcut: Codable, Defaults.Serializable, Equatable, Identifiable {
         ].merging(action.dictionaryRepresentation) { current, _ in current }
     }
 
-    var description: String {
-        "\(action)"
-    }
+    var description: String { action.description }
 }
 
 // MARK: - Action Extensions
