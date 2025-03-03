@@ -51,10 +51,10 @@ open class StoreManager {
         SwiftyStoreKit.purchaseProduct(ProductIdentifier.coffeeTip) { result in
             switch result {
             case let .success(purchase):
-                Log.debug("Purchase successful: %@", purchase.productId)
+                Log.shared.debug("Purchase successful: \(purchase.productId)")
                 completion?(true)
             case let .error(error):
-                Log.error("Purchase failed: %@", error.localizedDescription)
+                Log.shared.error("Purchase failed: \(error.localizedDescription)")
 
                 let title = "Purchase failed"
 
@@ -72,7 +72,7 @@ open class StoreManager {
                 }
                 completion?(false)
             case let .deferred(purchase):
-                Log.debug("Purchase deferred: %@", purchase.productId)
+                Log.shared.debug("Purchase deferred: \(purchase.productId)")
                 completion?(false)
             }
         }
