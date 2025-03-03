@@ -86,44 +86,12 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
 
     override func validateContextMenuItem(withCommand command: String, in _: SFSafariPage, userInfo: [String: Any]? = nil, validationHandler: @escaping (Bool, String?) -> Void) {
-        guard let userInfo,
-            let isInitialized = userInfo["isInitialized"] as? Bool,
-            let hasVideos = userInfo["hasVideos"] as? Bool,
-            let currentRate = userInfo["currentRate"] as? Double
-        else {
-            validationHandler(true, nil)
-            return
-        }
-
-        if !isInitialized || !hasVideos {
-            validationHandler(true, nil)
-            return
-        }
-
-        if let index = Int(command), Defaults[.shortcuts].indices ~= index {
-            let shortcut = Defaults[.shortcuts][index]
-
-            if shortcut.showInContextMenu {
-                switch shortcut.action {
-                case let .setRate(rate):
-                    // Don't show context menu item for setRate actions if the current rate is already set to the associated value
-                    validationHandler(currentRate == (rate ?? Defaults[.defaultRate]), shortcut.action.description)
-                    return
-                default:
-                    validationHandler(false, shortcut.action.description)
-                    return
-                }
-            }
-        }
-
-        validationHandler(true, nil)
+        let description = userInfo?[command] as? String
+        validationHandler(description == nil, description)
     }
 
     override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo _: [String: Any]? = nil) {
-        if let index = Int(command), Defaults[.shortcuts].indices ~= index {
-            let shortcut = Defaults[.shortcuts][index]
-            page.triggerAction(for: shortcut)
-        }
+        page.triggerContextMenuAction(for: command)
     }
 
     override func popoverViewController() -> SFSafariExtensionViewController {

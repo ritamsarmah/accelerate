@@ -13,6 +13,10 @@ extension SFSafariPage {
     func triggerAction(for shortcut: Shortcut) {
         dispatchMessageToScript(withName: "triggerAction", userInfo: ["shortcut": shortcut.dictionaryRepresentation])
     }
+    
+    func triggerContextMenuAction(for command: String) {
+        dispatchMessageToScript(withName: "triggerContextMenuAction", userInfo: ["index": Int(command)!])
+    }
 
     func isAllowed(completion: @escaping (_ isAllowed: Bool, _ rule: String?) -> Void) {
         getPropertiesWithCompletionHandler { properties in
