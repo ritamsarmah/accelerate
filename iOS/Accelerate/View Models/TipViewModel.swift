@@ -49,25 +49,29 @@ extension TipView {
 
         func purchaseTip() async {
             guard let tip else { return }
-
-            isPurchasing = true
-
+            await MainActor.run { self.isPurchasing = true }
+            
             do {
                 if case .success(let verification) = try await tip.purchase() {
                     let transaction = try verifyTransaction(verification)
-
+                    
                     // Show confetti to user
-                    self.isPurchasing = false
-                    self.confettiCounter += 1
-
+                    await MainActor.run {
+                        self.isPurchasing = false
+                        self.confettiCounter += 1
+                    }
+                    
                     await transaction.finish()
                 } else {
-                    self.isPurchasing = false
+                    await MainActor.run { self.isPurchasing = false }
                 }
             } catch {
-                self.isPurchasing = false
-                AlertInfo.showAlert(.tipPurchaseFailed(error: error))
+                await MainActor.run {
+                    self.isPurchasing = false
+                    AlertInfo.showAlert(.tipPurchaseFailed(error: error))
+                }
             }
+            
         }
 
         private func verifyTransaction<T>(_ result: VerificationResult<T>) throws -> T {
