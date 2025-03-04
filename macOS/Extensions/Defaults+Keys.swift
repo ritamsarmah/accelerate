@@ -25,6 +25,6 @@ extension Defaults.Keys {
 extension [Shortcut] {
     var toolbarShortcutIndex: Int? {
         guard let toolbarShortcutIdentifier = Defaults[.toolbarShortcutIdentifier] else { return nil }
-        return Defaults[.shortcuts].firstIndex(where: { $0.identifier == toolbarShortcutIdentifier })
+        return Defaults[.shortcuts].firstIndex(where: { $0.id == toolbarShortcutIdentifier })
     }
 }

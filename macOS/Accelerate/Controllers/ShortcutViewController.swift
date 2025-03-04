@@ -277,13 +277,13 @@ class ShortcutViewController: NSViewController {
 
         let newShortcut = Shortcut(
             action: action,
+            isEnabled: shortcut?.isEnabled ?? true,
+            showSnackbar: showSnackbarCheckbox.state == .on,
             keyCode: shortcutView.shortcutValue?.keyCode ?? 0,
             modifiers: shortcutView.shortcutValue?.modifierFlags ?? [],
-            isEnabled: shortcut?.isEnabled ?? true,
             isGlobal: isGlobalCheckbox.isEnabled && isGlobalCheckbox.state == .on,
-            showSnackbar: showSnackbarCheckbox.state == .on,
             showInContextMenu: showInContextMenuCheckbox.state == .on,
-            identifier: shortcut?.identifier ?? UUID().uuidString
+            id: shortcut?.id
         )
 
         if let shortcutIndex {

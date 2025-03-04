@@ -8,16 +8,6 @@
       location = "group:iOS/Accelerate - iOS.xcodeproj">
    </FileRef>
    <Group
-      location = "group:Common"
-      name = "Common">
-      <FileRef
-         location = "group:SnackbarLocation.swift">
-      </FileRef>
-      <FileRef
-         location = "group:Log.swift">
-      </FileRef>
-   </Group>
-   <Group
       location = "group:Extensions"
       name = "Extensions">
       <FileRef

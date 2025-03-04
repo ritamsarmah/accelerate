@@ -135,7 +135,7 @@ class ShortcutsViewController: NSViewController, SettingsPane {
             let shortcut = Defaults[.shortcuts].remove(at: index)
 
             // Check if toolbar shortcut was set to the removed shortcut
-            if shortcut.identifier == Defaults[.toolbarShortcutIdentifier] {
+            if shortcut.id == Defaults[.toolbarShortcutIdentifier] {
                 Defaults[.toolbarShortcutIdentifier] = nil
             }
 
@@ -168,7 +168,7 @@ class ShortcutsViewController: NSViewController, SettingsPane {
         if sender.indexOfSelectedItem == 0 {
             Defaults[.toolbarShortcutIdentifier] = nil
         } else {
-            Defaults[.toolbarShortcutIdentifier] = Defaults[.shortcuts][sender.indexOfSelectedItem - 1].identifier
+            Defaults[.toolbarShortcutIdentifier] = Defaults[.shortcuts][sender.indexOfSelectedItem - 1].id
         }
     }
 

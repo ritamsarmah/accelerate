@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204F7F662D7DF481003FCB7C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F622D7DF481003FCB7C /* Log.swift */; };
+		204F7F672D7DF481003FCB7C /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F642D7DF481003FCB7C /* SnackbarLocation.swift */; };
+		204F7F682D7DF481003FCB7C /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F632D7DF481003FCB7C /* Shortcut.swift */; };
+		204F7F692D7DF481003FCB7C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F622D7DF481003FCB7C /* Log.swift */; };
+		204F7F6A2D7DF481003FCB7C /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F642D7DF481003FCB7C /* SnackbarLocation.swift */; };
+		204F7F6B2D7DF481003FCB7C /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F632D7DF481003FCB7C /* Shortcut.swift */; };
 		3501FCA02754232F007F6622 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3501FC9F2754232F007F6622 /* TutorialView.swift */; };
 		3531AA932835A4F1003521C6 /* TipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AA922835A4F1003521C6 /* TipViewModel.swift */; };
 		3531AA952835A5AB003521C6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3531AA902835A4A6003521C6 /* StoreKit.framework */; };
@@ -34,10 +40,6 @@
 		3559CAAF273D9CB50014B565 /* ShortcutListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3559CAAE273D9CB50014B565 /* ShortcutListViewModel.swift */; };
 		3559CAB1273DBA310014B565 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3559CAB0273DBA310014B565 /* AlertInfo.swift */; };
 		35643ED5283595B80062CA49 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35643ED4283595B80062CA49 /* TipView.swift */; };
-		3572AC79283A9EEF00D902A1 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC77283A9EEF00D902A1 /* Log.swift */; };
-		3572AC7A283A9EEF00D902A1 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC77283A9EEF00D902A1 /* Log.swift */; };
-		3572AC7B283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */; };
-		3572AC7C283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */; };
 		3572AC83283A9F6800D902A1 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */; };
 		3572AC84283A9F6800D902A1 /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */; };
 		3572AC85283A9F6800D902A1 /* Shortcut+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */; };
@@ -57,8 +59,6 @@
 		35A4EC8026EA63E1006CB45B /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */; };
 		35A4EC8126EA63E1006CB45B /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */; };
 		35A4EC8326EA65CA006CB45B /* BlocklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4EC8226EA65CA006CB45B /* BlocklistView.swift */; };
-		35A97BF526E2995400299FC0 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A97BF426E2995400299FC0 /* Shortcut.swift */; };
-		35A97BF626E2995400299FC0 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A97BF426E2995400299FC0 /* Shortcut.swift */; };
 		35ADA85126E6C0920012D2DB /* ShortcutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADA85026E6C0920012D2DB /* ShortcutListView.swift */; };
 		35ADA85326E6C0BE0012D2DB /* ShortcutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADA85226E6C0BE0012D2DB /* ShortcutDetailView.swift */; };
 		35ADA85726E6C5650012D2DB /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADA85626E6C5650012D2DB /* GeneralView.swift */; };
@@ -92,6 +92,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		204F7F622D7DF481003FCB7C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		204F7F632D7DF481003FCB7C /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
+		204F7F642D7DF481003FCB7C /* SnackbarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarLocation.swift; sourceTree = "<group>"; };
 		3501FC9F2754232F007F6622 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		3531AA902835A4A6003521C6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3531AA922835A4F1003521C6 /* TipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewModel.swift; sourceTree = "<group>"; };
@@ -120,8 +123,6 @@
 		3559CAAE273D9CB50014B565 /* ShortcutListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutListViewModel.swift; sourceTree = "<group>"; };
 		3559CAB0273DBA310014B565 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		35643ED4283595B80062CA49 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
-		3572AC77283A9EEF00D902A1 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = ../../Common/Log.swift; sourceTree = "<group>"; };
-		3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnackbarLocation.swift; path = ../../Common/SnackbarLocation.swift; sourceTree = "<group>"; };
 		3572AC7F283A9F6800D902A1 /* Swift+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Swift+Extensions.swift"; path = "../../Extensions/Swift+Extensions.swift"; sourceTree = "<group>"; };
 		3572AC80283A9F6800D902A1 /* Shortcut+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Shortcut+Action.swift"; path = "../../Extensions/Shortcut+Action.swift"; sourceTree = "<group>"; };
 		3572AC82283A9F6800D902A1 /* Defaults+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Defaults+Shared.swift"; path = "../../Extensions/Defaults+Shared.swift"; sourceTree = "<group>"; };
@@ -136,7 +137,6 @@
 		35A4EC7C26EA6116006CB45B /* Defaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Keys.swift"; sourceTree = "<group>"; };
 		35A4EC7F26EA63E1006CB45B /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		35A4EC8226EA65CA006CB45B /* BlocklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistView.swift; sourceTree = "<group>"; };
-		35A97BF426E2995400299FC0 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		35ADA85026E6C0920012D2DB /* ShortcutListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutListView.swift; sourceTree = "<group>"; };
 		35ADA85226E6C0BE0012D2DB /* ShortcutDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutDetailView.swift; sourceTree = "<group>"; };
 		35ADA85626E6C5650012D2DB /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
@@ -167,12 +167,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		204F7F652D7DF481003FCB7C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				204F7F622D7DF481003FCB7C /* Log.swift */,
+				204F7F632D7DF481003FCB7C /* Shortcut.swift */,
+				204F7F642D7DF481003FCB7C /* SnackbarLocation.swift */,
+			);
+			name = Common;
+			path = ../Common;
+			sourceTree = SOURCE_ROOT;
+		};
 		353EB09726D34F4B00ECC91F = {
 			isa = PBXGroup;
 			children = (
 				353EB0A226D34F4B00ECC91F /* Accelerate */,
 				353EB0D526D34F4D00ECC91F /* Accelerate Extension */,
-				35A97BF026E298FF00299FC0 /* Common */,
+				204F7F652D7DF481003FCB7C /* Common */,
 				3572AC7E283A9F5200D902A1 /* Extensions */,
 				353EB0A126D34F4B00ECC91F /* Products */,
 				35A4EC7926EA6100006CB45B /* Frameworks */,
@@ -289,16 +300,6 @@
 				35643ED4283595B80062CA49 /* TipView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		35A97BF026E298FF00299FC0 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3572AC77283A9EEF00D902A1 /* Log.swift */,
-				35A97BF426E2995400299FC0 /* Shortcut.swift */,
-				3572AC78283A9EEF00D902A1 /* SnackbarLocation.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		35AF2447270526C0005F5FB0 /* View Models */ = {
@@ -461,13 +462,13 @@
 				35AF244B27053177005F5FB0 /* ShortcutDetailViewModel.swift in Sources */,
 				35C603B22776B1B60001550E /* BlocklistViewModel.swift in Sources */,
 				35A4EC8326EA65CA006CB45B /* BlocklistView.swift in Sources */,
+				204F7F662D7DF481003FCB7C /* Log.swift in Sources */,
+				204F7F672D7DF481003FCB7C /* SnackbarLocation.swift in Sources */,
+				204F7F682D7DF481003FCB7C /* Shortcut.swift in Sources */,
 				35643ED5283595B80062CA49 /* TipView.swift in Sources */,
 				353EB0AE26D34F4C00ECC91F /* SceneDelegate.swift in Sources */,
-				3572AC7B283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */,
 				3501FCA02754232F007F6622 /* TutorialView.swift in Sources */,
-				35A97BF526E2995400299FC0 /* Shortcut.swift in Sources */,
 				35ADA85126E6C0920012D2DB /* ShortcutListView.swift in Sources */,
-				3572AC79283A9EEF00D902A1 /* Log.swift in Sources */,
 				35A4EC8026EA63E1006CB45B /* UIKit+Extensions.swift in Sources */,
 				35ADA85326E6C0BE0012D2DB /* ShortcutDetailView.swift in Sources */,
 				35ADA85726E6C5650012D2DB /* GeneralView.swift in Sources */,
@@ -482,12 +483,12 @@
 			files = (
 				35A4EC8126EA63E1006CB45B /* UIKit+Extensions.swift in Sources */,
 				3572AC84283A9F6800D902A1 /* Swift+Extensions.swift in Sources */,
-				3572AC7C283A9EEF00D902A1 /* SnackbarLocation.swift in Sources */,
 				353EB0D726D34F4D00ECC91F /* SafariWebExtensionHandler.swift in Sources */,
 				3572AC8A283A9F6800D902A1 /* Defaults+Shared.swift in Sources */,
-				3572AC7A283A9EEF00D902A1 /* Log.swift in Sources */,
+				204F7F692D7DF481003FCB7C /* Log.swift in Sources */,
+				204F7F6A2D7DF481003FCB7C /* SnackbarLocation.swift in Sources */,
+				204F7F6B2D7DF481003FCB7C /* Shortcut.swift in Sources */,
 				3572AC86283A9F6800D902A1 /* Shortcut+Action.swift in Sources */,
-				35A97BF626E2995400299FC0 /* Shortcut.swift in Sources */,
 				35A4EC7E26EA6116006CB45B /* Defaults+Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
