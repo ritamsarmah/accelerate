@@ -198,12 +198,9 @@ class GeneralViewController: NSViewController, SettingsPane {
         alert.addButton(withTitle: "OK")
         alert.addButton(withTitle: "Cancel")
 
-        switch alert.runModal() {
-        case .alertFirstButtonReturn:
+        if case .alertFirstButtonReturn = alert.runModal() {
             Defaults.reset(Defaults.Keys.allGeneralKeys)
             updateViews()
-        default:
-            break
         }
     }
 }

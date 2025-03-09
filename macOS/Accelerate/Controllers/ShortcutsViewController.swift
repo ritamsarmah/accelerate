@@ -181,13 +181,10 @@ class ShortcutsViewController: NSViewController, SettingsPane {
         alert.addButton(withTitle: "OK")
         alert.addButton(withTitle: "Cancel")
 
-        switch alert.runModal() {
-        case .alertFirstButtonReturn:
+        if case .alertFirstButtonReturn = alert.runModal() {
             Defaults.reset(Defaults.Keys.allShortcutKeys)
             undoManager?.removeAllActions()
             updateViews()
-        default:
-            break
         }
     }
 

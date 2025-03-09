@@ -53,10 +53,7 @@ extension TipView {
             isPurchasing = true
 
             do {
-                let result = try await tip.purchase()
-
-                switch result {
-                case let .success(verification):
+                if case .success(let verification) = try await tip.purchase() {
                     let transaction = try verifyTransaction(verification)
 
                     // Show confetti to user
@@ -64,7 +61,7 @@ extension TipView {
                     self.confettiCounter += 1
 
                     await transaction.finish()
-                default:
+                } else {
                     self.isPurchasing = false
                 }
             } catch {
