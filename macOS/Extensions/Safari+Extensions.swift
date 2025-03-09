@@ -13,7 +13,7 @@ extension SFSafariPage {
     func triggerAction(for shortcut: Shortcut) {
         dispatchMessageToScript(withName: "triggerAction", userInfo: ["shortcut": shortcut.dictionaryRepresentation])
     }
-    
+
     func triggerContextMenuAction(for command: String) {
         dispatchMessageToScript(withName: "triggerContextMenuAction", userInfo: ["index": Int(command)!])
     }

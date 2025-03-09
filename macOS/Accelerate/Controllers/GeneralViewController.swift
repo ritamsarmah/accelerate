@@ -9,8 +9,8 @@
 import Cocoa
 import Defaults
 import MASShortcut
-import Settings
 import SafariServices.SFSafariApplication
+import Settings
 
 class GeneralViewController: NSViewController, SettingsPane {
 

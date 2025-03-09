@@ -157,7 +157,8 @@ class ShortcutsViewController: NSViewController, SettingsPane {
             self.shortcutTableView.reload()
 
             // NOTE: Don't use NSPopUpButton.addItems(withTitles:) since it will remove duplicate titles
-            self.toolbarShortcutButton.menu?.items = [NSMenuItem(title: "None", action: nil, keyEquivalent: "")]
+            self.toolbarShortcutButton.menu?.items =
+                [NSMenuItem(title: "None", action: nil, keyEquivalent: "")]
                 + Defaults[.shortcuts].map { NSMenuItem(title: $0.action.description, action: nil, keyEquivalent: "") }
 
             self.toolbarShortcutButton.selectItem(at: (Defaults[.shortcuts].toolbarShortcutIndex ?? -1) + 1)
