@@ -211,6 +211,22 @@ extension Shortcut.Action: CaseIterable, CustomStringConvertible, CustomDebugStr
         }
     }
 
+    var iconSystemName: String {
+        switch self {
+        case .speedUp: "hare"
+        case .slowDown: "tortoise"
+        case .setRate: "speedometer"
+        case .showRate: "eye"
+        case .playOrPause: "playpause"
+        case .skipForward: "goforward"
+        case .skipBackward: "gobackward"
+        case .skipToEnd: "forward.end"
+        case .toggleMute: "speaker.slash"
+        case .pip: "pip"
+        case .fullscreen: "arrow.up.left.and.arrow.down.right"
+        }
+    }
+
     var dictionaryRepresentation: [String: Any] {
         var value: [String: Any] = ["action": debugDescription]
 

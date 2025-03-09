@@ -18,26 +18,26 @@
 		2038D4ED220EA4F100E8A9FE /* inject.js in Resources */ = {isa = PBXBuildFile; fileRef = 2038D4EC220EA4F100E8A9FE /* inject.js */; };
 		204980C2227F90BF0031C167 /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204980C1227F90BF0031C167 /* Defaults+Keys.swift */; };
 		204980C3227F90BF0031C167 /* Defaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204980C1227F90BF0031C167 /* Defaults+Keys.swift */; };
-		204F31F625D9EB2B0040A0E8 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F31F525D9EB2B0040A0E8 /* Shortcut.swift */; };
-		204F31F725D9EB2B0040A0E8 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F31F525D9EB2B0040A0E8 /* Shortcut.swift */; };
+		204F7F5C2D7DF46F003FCB7C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F582D7DF46F003FCB7C /* Log.swift */; };
+		204F7F5D2D7DF46F003FCB7C /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F592D7DF46F003FCB7C /* Shortcut.swift */; };
+		204F7F5E2D7DF46F003FCB7C /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F5A2D7DF46F003FCB7C /* SnackbarLocation.swift */; };
+		204F7F5F2D7DF46F003FCB7C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F582D7DF46F003FCB7C /* Log.swift */; };
+		204F7F602D7DF46F003FCB7C /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F592D7DF46F003FCB7C /* Shortcut.swift */; };
+		204F7F612D7DF46F003FCB7C /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F5A2D7DF46F003FCB7C /* SnackbarLocation.swift */; };
 		208023D522AB527000F175A5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208023D422AB527000F175A5 /* StoreKit.framework */; };
 		2097C59625DE07E200279123 /* BlocklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59525DE07E200279123 /* BlocklistViewController.swift */; };
 		2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59925DE080500279123 /* ShortcutsViewController.swift */; };
 		2097C5A225DE085D00279123 /* EditableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C5A125DE085D00279123 /* EditableTableView.swift */; };
+		20AD614A2D7774400018D941 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD61492D7774400018D941 /* StoreManager.swift */; };
 		20BD4589231F09EF0009CC82 /* Cocoa+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */; };
 		20BD458A231F0A850009CC82 /* Cocoa+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */; };
 		351AB4A02690C83D007E429A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351AB49E2690C83D007E429A /* TutorialViewController.swift */; };
 		351AB4A12690C83D007E429A /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351AB49F2690C83D007E429A /* TutorialViewController.xib */; };
-		351AB4A32691182E007E429A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351AB4A22691182E007E429A /* StoreManager.swift */; };
 		3545C5FB2839C2BC00989463 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 3545C5FA2839C2BC00989463 /* MASShortcut */; };
 		3545C5FD2839C2C800989463 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 3545C5FC2839C2C800989463 /* MASShortcut */; };
 		356B33D626D2D4C2006CDADB /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 356B33D526D2D4C2006CDADB /* Defaults */; };
 		356B33DC26D2D582006CDADB /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 356B33DB26D2D582006CDADB /* SwiftyStoreKit */; };
 		356B33DE26D2D98F006CDADB /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 356B33DD26D2D98F006CDADB /* Defaults */; };
-		3572AC73283A9EE500D902A1 /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC71283A9EE500D902A1 /* SnackbarLocation.swift */; };
-		3572AC74283A9EE500D902A1 /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC71283A9EE500D902A1 /* SnackbarLocation.swift */; };
-		3572AC75283A9EE500D902A1 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC72283A9EE500D902A1 /* Log.swift */; };
-		3572AC76283A9EE500D902A1 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3572AC72283A9EE500D902A1 /* Log.swift */; };
 		3572AC9F283AB40000D902A1 /* snackbar.css in Resources */ = {isa = PBXBuildFile; fileRef = 3572AC9E283AB40000D902A1 /* snackbar.css */; };
 		3572ACA6283AB4D500D902A1 /* core.js in Resources */ = {isa = PBXBuildFile; fileRef = 3572ACA2283AB4D500D902A1 /* core.js */; };
 		3572ACA7283AB4D500D902A1 /* logger.js in Resources */ = {isa = PBXBuildFile; fileRef = 3572ACA3283AB4D500D902A1 /* logger.js */; };
@@ -116,17 +116,17 @@
 		2038D4EC220EA4F100E8A9FE /* inject.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = inject.js; sourceTree = "<group>"; };
 		2038D4F0220EA4F100E8A9FE /* Accelerate_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Accelerate_Extension.entitlements; sourceTree = "<group>"; };
 		204980C1227F90BF0031C167 /* Defaults+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Defaults+Keys.swift"; sourceTree = "<group>"; };
-		204F31F525D9EB2B0040A0E8 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
+		204F7F582D7DF46F003FCB7C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		204F7F592D7DF46F003FCB7C /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
+		204F7F5A2D7DF46F003FCB7C /* SnackbarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarLocation.swift; sourceTree = "<group>"; };
 		208023D422AB527000F175A5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2097C59525DE07E200279123 /* BlocklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistViewController.swift; sourceTree = "<group>"; };
 		2097C59925DE080500279123 /* ShortcutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsViewController.swift; sourceTree = "<group>"; };
 		2097C5A125DE085D00279123 /* EditableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTableView.swift; sourceTree = "<group>"; };
+		20AD61492D7774400018D941 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		20BD4588231F09EF0009CC82 /* Cocoa+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cocoa+Extensions.swift"; sourceTree = "<group>"; };
 		351AB49E2690C83D007E429A /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		351AB49F2690C83D007E429A /* TutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
-		351AB4A22691182E007E429A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		3572AC71283A9EE500D902A1 /* SnackbarLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnackbarLocation.swift; path = ../../Common/SnackbarLocation.swift; sourceTree = "<group>"; };
-		3572AC72283A9EE500D902A1 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = ../../Common/Log.swift; sourceTree = "<group>"; };
 		3572AC9E283AB40000D902A1 /* snackbar.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = snackbar.css; path = ../../Web/snackbar.css; sourceTree = "<group>"; };
 		3572ACA2283AB4D500D902A1 /* core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = core.js; path = ../../Web/core.js; sourceTree = "<group>"; };
 		3572ACA3283AB4D500D902A1 /* logger.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = logger.js; path = ../../Web/logger.js; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 			children = (
 				2038D4CB220EA4F000E8A9FE /* Accelerate */,
 				2038D4E3220EA4F100E8A9FE /* Accelerate Extension */,
-				204980C0227F90B00031C167 /* Common */,
+				204F7F5B2D7DF46F003FCB7C /* Common */,
 				358908A1283AE0BD00F40CD7 /* Extensions */,
 				359951C726D2EB7D004D8C08 /* AccelerateTests */,
 				2038D4E0220EA4F100E8A9FE /* Frameworks */,
@@ -233,6 +233,7 @@
 				204E9B5D2315B88F00E04DBF /* Controllers */,
 				200079B523307A4200643F08 /* Views */,
 				20F5D4E52315B8DC00A8F516 /* Supporting Files */,
+				20AD61492D7774400018D941 /* StoreManager.swift */,
 			);
 			path = Accelerate;
 			sourceTree = "<group>";
@@ -265,17 +266,6 @@
 			path = "Accelerate Extension";
 			sourceTree = "<group>";
 		};
-		204980C0227F90B00031C167 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3572AC72283A9EE500D902A1 /* Log.swift */,
-				204F31F525D9EB2B0040A0E8 /* Shortcut.swift */,
-				3572AC71283A9EE500D902A1 /* SnackbarLocation.swift */,
-				351AB4A22691182E007E429A /* StoreManager.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		204E9B5D2315B88F00E04DBF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +277,17 @@
 			);
 			path = Controllers;
 			sourceTree = "<group>";
+		};
+		204F7F5B2D7DF46F003FCB7C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				204F7F582D7DF46F003FCB7C /* Log.swift */,
+				204F7F592D7DF46F003FCB7C /* Shortcut.swift */,
+				204F7F5A2D7DF46F003FCB7C /* SnackbarLocation.swift */,
+			);
+			name = Common;
+			path = ../Common;
+			sourceTree = SOURCE_ROOT;
 		};
 		20F5D4E52315B8DC00A8F516 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -520,21 +521,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3572AC73283A9EE500D902A1 /* SnackbarLocation.swift in Sources */,
+				204F7F5C2D7DF46F003FCB7C /* Log.swift in Sources */,
+				204F7F5D2D7DF46F003FCB7C /* Shortcut.swift in Sources */,
+				204F7F5E2D7DF46F003FCB7C /* SnackbarLocation.swift in Sources */,
 				2038D4D4220EA4F000E8A9FE /* GeneralViewController.swift in Sources */,
 				35F17C3A2B7818B000C640B9 /* Safari+Extensions.swift in Sources */,
-				351AB4A32691182E007E429A /* StoreManager.swift in Sources */,
 				20BD4589231F09EF0009CC82 /* Cocoa+Extensions.swift in Sources */,
 				358908AC283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */,
 				2038D4CF220EA4F000E8A9FE /* AppDelegate.swift in Sources */,
 				358908A8283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */,
 				35D22BF4267E518C006E23B2 /* ShortcutViewController.swift in Sources */,
+				20AD614A2D7774400018D941 /* StoreManager.swift in Sources */,
 				2097C59625DE07E200279123 /* BlocklistViewController.swift in Sources */,
 				351AB4A02690C83D007E429A /* TutorialViewController.swift in Sources */,
-				3572AC75283A9EE500D902A1 /* Log.swift in Sources */,
 				2097C5A225DE085D00279123 /* EditableTableView.swift in Sources */,
 				204980C2227F90BF0031C167 /* Defaults+Keys.swift in Sources */,
-				204F31F625D9EB2B0040A0E8 /* Shortcut.swift in Sources */,
 				2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */,
 				358908A6283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */,
 			);
@@ -547,14 +548,14 @@
 				20BD458A231F0A850009CC82 /* Cocoa+Extensions.swift in Sources */,
 				204980C3227F90BF0031C167 /* Defaults+Keys.swift in Sources */,
 				358908A7283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */,
+				204F7F5F2D7DF46F003FCB7C /* Log.swift in Sources */,
+				204F7F602D7DF46F003FCB7C /* Shortcut.swift in Sources */,
+				204F7F612D7DF46F003FCB7C /* SnackbarLocation.swift in Sources */,
 				358908AD283AE0C900F40CD7 /* Swift+Extensions.swift in Sources */,
-				3572AC74283A9EE500D902A1 /* SnackbarLocation.swift in Sources */,
 				35F17C3B2B7818B000C640B9 /* Safari+Extensions.swift in Sources */,
 				2038D4E7220EA4F100E8A9FE /* SafariExtensionViewController.swift in Sources */,
 				2038D4E5220EA4F100E8A9FE /* SafariExtensionHandler.swift in Sources */,
 				358908A9283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */,
-				3572AC76283A9EE500D902A1 /* Log.swift in Sources */,
-				204F31F725D9EB2B0040A0E8 /* Shortcut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
