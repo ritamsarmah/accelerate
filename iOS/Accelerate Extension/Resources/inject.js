@@ -9,64 +9,64 @@
 /* Event Listeners */
 
 if (document.readyState !== "loading") {
-    initialize();
+  initialize();
 } else {
-    document.addEventListener("DOMContentLoaded", initialize);
+  document.addEventListener("DOMContentLoaded", initialize);
 }
 
 browser.runtime.onMessage.addListener((request) => {
-    switch (request.name) {
-        case "ready":
-            initialize();
-            break;
-        case "triggerAction":
-            triggerAction(request.shortcut);
-            break;
-        case "syncRate":
-            syncRate();
-            break;
-        default:
-            break;
-    }
+  switch (request.name) {
+    case "ready":
+      initialize();
+      break;
+    case "triggerAction":
+      triggerAction(request.shortcut);
+      break;
+    case "syncRate":
+      syncRate();
+      break;
+    default:
+      break;
+  }
 });
 
 /* Initialization */
 
 function initialize() {
-    browser.runtime.sendMessage({ name: "initialize" }).then((response) => {
-        // Cancel initialization if settings not ready or Accelerate is blocked on page
-        if (!response.ready || !response.allowed) return;
+  browser.runtime.sendMessage({ name: "initialize" }).then((response) => {
+    // Cancel initialization if settings not ready or Accelerate is blocked on page
+    if (!response.ready || !response.allowed) return;
 
-        _initialize(response.settings);
-    });
+    _initialize(response.settings);
+  });
 }
 
 /* Overrides */
 
 function shortcutEventListener(event, shortcuts) {
-    if (activeElementHasEditableText()) return;
+  if (activeElementHasEditableText()) return;
 
-    // NOTE: Accelerate for iOS only supports single letter keys since native app cannot record modifier keys yet
-    let keyCombo = event.key.toUpperCase();
+  // NOTE: Accelerate for iOS only supports single letter keys since native app cannot record modifier keys yet
+  let keyCombo = event.key.toUpperCase();
 
-    if (keyCombo in shortcuts) {
-        logger.d(`Shortcut recognized for key combination: ${keyCombo}`);
-        for (let shortcut of shortcuts[keyCombo]) {
-            triggerAction(shortcut, event);
-        }
+  if (keyCombo in shortcuts) {
+    logger.d(`Shortcut recognized for key combination: ${keyCombo}`);
+    for (let shortcut of shortcuts[keyCombo]) {
+      triggerAction(shortcut, event);
     }
+  }
 }
 
 function setRate(newRate, videos) {
-    _setRate(newRate, videos);
-    syncRate();
+  _setRate(newRate, videos);
+  syncRate();
 }
 
 function syncRate() {
-    browser.runtime.sendMessage({ name: "sync", currentRate: currentRate });
+  browser.runtime.sendMessage({ name: "sync", currentRate: currentRate });
 }
 
 function getSnackbarIcon(icon) {
-    let iconURL = browser.runtime.getURL(`images/snackbar/${icon}.svg`);
-    return `<img src="${iconURL}">`;
+  let iconURL = browser.runtime.getURL(`images/snackbar/${icon}.svg`);
+  return `<img src="${iconURL}">`;
 }
