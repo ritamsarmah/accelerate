@@ -1,1 +1,1 @@
-../../../accelerate/Web/logger.js
+../../../Web/logger.js
