@@ -10,6 +10,7 @@
 
 var snackbarIcons = {}; // Cached SVGs for icons retrieved from extension
 var contextMenuShortcuts = []; // Cached context menu shortcuts
+var contextMenuUserInfo = {}; // Cached context menu event user info
 
 /* Event Listeners */
 
@@ -55,31 +56,35 @@ function initialize(settings) {
   contextMenuShortcuts = settings.shortcuts.filter(
     (shortcut) => shortcut.showInContextMenu,
   );
+  updateContextMenuUserInfo(contextMenuShortcuts);
 
-  // Add context menu listener
   document.addEventListener(
     "contextmenu",
     (event) => {
-      if (!initialized || !hasVideos) {
-        safari.extension.setContextMenuEventUserInfo(event, null);
-      } else {
-        // Convert for extension handler to validate with "command" (index)
-        const userInfo = {};
-        contextMenuShortcuts.forEach((shortcut, index) => {
-          // Hide setRate items if current rate matches
-          if (
-            shortcut.action !== "setRate" ||
-            (shortcut.rate ?? defaultRate) !== currentRate
-          ) {
-            userInfo[index] = shortcut.description;
-          }
-        });
-
-        safari.extension.setContextMenuEventUserInfo(event, userInfo);
-      }
+      safari.extension.setContextMenuEventUserInfo(
+        event,
+        !initialized || !hasVideos ? null : contextMenuUserInfo,
+      );
     },
     false,
   );
+}
+
+function updateContextMenuUserInfo(shortcuts) {
+  contextMenuUserInfo = {};
+  for (let i = 0; i < shortcuts.length; i++) {
+    const shortcut = shortcuts[i];
+
+    // Hide setRate items if current rate matches
+    if (
+      shortcut.action === "setRate" &&
+      (shortcut.rate ?? defaultRate) === currentRate
+    ) {
+      continue;
+    }
+
+    contextMenuUserInfo[i] = shortcut.description;
+  }
 }
 
 /* Overrides */
@@ -102,6 +107,13 @@ function shortcutEventListener(event, shortcuts) {
       }
     }
   }
+}
+
+function setRate(newRate, videos) {
+  _setRate(newRate, videos);
+
+  // Pre-configure context menu user info to minimize logic during actual menu render
+  updateContextMenuUserInfo(contextMenuShortcuts);
 }
 
 function getSnackbarIcon(icon) {
