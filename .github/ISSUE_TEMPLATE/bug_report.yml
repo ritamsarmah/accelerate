@@ -54,4 +54,3 @@ body:
       placeholder: "Tip: Attach files by clicking this area and dragging files in"
     validations:
       required: false
-

@@ -1,1 +1,1 @@
-../../../accelerate/Web/core.js
+../../../Web/core.js

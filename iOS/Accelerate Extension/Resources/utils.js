@@ -1,1 +1,1 @@
-../../../accelerate/Web/utils.js
+../../../Web/utils.js

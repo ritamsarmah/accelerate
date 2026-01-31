@@ -1,1 +1,1 @@
-../../../accelerate/Web/snackbar.js
+../../../Web/snackbar.js

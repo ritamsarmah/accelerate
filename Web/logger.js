@@ -7,24 +7,24 @@
 //
 
 var logger = {
-    tag: "Accelerate",
-    isVerbose: false,
-    e: (message, ...args) => {
-        if (logger.isVerbose) {
-            console.error(logger.tag, message, ...args);
-        }
-    },
-    w: (message, ...args) => {
-        if (logger.isVerbose) {
-            console.warn(logger.tag, message, ...args);
-        }
-    },
-    d: (message, ...args) => {
-        if (logger.isVerbose) {
-            console.debug(logger.tag, message, ...args);
-        }
-    },
-    i: (message, ...args) => {
-        console.info(logger.tag, message, ...args);
+  tag: "Accelerate",
+  isVerbose: false,
+  e: (message, ...args) => {
+    if (logger.isVerbose) {
+      console.error(logger.tag, message, ...args);
     }
+  },
+  w: (message, ...args) => {
+    if (logger.isVerbose) {
+      console.warn(logger.tag, message, ...args);
+    }
+  },
+  d: (message, ...args) => {
+    if (logger.isVerbose) {
+      console.debug(logger.tag, message, ...args);
+    }
+  },
+  i: (message, ...args) => {
+    console.info(logger.tag, message, ...args);
+  },
 };
