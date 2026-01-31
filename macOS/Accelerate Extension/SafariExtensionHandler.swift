@@ -75,6 +75,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
 
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
+        if Defaults[.shortcuts].toolbarShortcutIndex == nil {
+            validationHandler(false, "")
+            return
+        }
+
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
         window.getActiveTab { tab in
             tab?.getActivePage { page in
