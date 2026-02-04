@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,8 @@
 		204F7F5F2D7DF46F003FCB7C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F582D7DF46F003FCB7C /* Log.swift */; };
 		204F7F602D7DF46F003FCB7C /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F592D7DF46F003FCB7C /* Shortcut.swift */; };
 		204F7F612D7DF46F003FCB7C /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F5A2D7DF46F003FCB7C /* SnackbarLocation.swift */; };
+		2066E7902F32CCA100BAFF88 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2066E78F2F32CCA100BAFF88 /* AppIcon.icon */; };
+		2066E7912F32CCA100BAFF88 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2066E78F2F32CCA100BAFF88 /* AppIcon.icon */; };
 		208023D522AB527000F175A5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208023D422AB527000F175A5 /* StoreKit.framework */; };
 		2097C59625DE07E200279123 /* BlocklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59525DE07E200279123 /* BlocklistViewController.swift */; };
 		2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097C59925DE080500279123 /* ShortcutsViewController.swift */; };
@@ -90,14 +92,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		2038D4F6220EA4F100E8A9FE /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstSubfolder = PlugIns;
 			files = (
 				2038D4DD220EA4F100E8A9FE /* Accelerate Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -119,6 +119,7 @@
 		204F7F582D7DF46F003FCB7C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		204F7F592D7DF46F003FCB7C /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		204F7F5A2D7DF46F003FCB7C /* SnackbarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarLocation.swift; sourceTree = "<group>"; };
+		2066E78F2F32CCA100BAFF88 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = AppIcon.icon; path = ../AppIcon.icon; sourceTree = SOURCE_ROOT; };
 		208023D422AB527000F175A5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2097C59525DE07E200279123 /* BlocklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistViewController.swift; sourceTree = "<group>"; };
 		2097C59925DE080500279123 /* ShortcutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +161,6 @@
 /* Begin PBXFrameworksBuildPhase section */
 		2038D4C6220EA4F000E8A9FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				3545C5FB2839C2BC00989463 /* MASShortcut in Frameworks */,
 				20133C2B2D7383920067AE2F /* Settings in Frameworks */,
@@ -168,24 +168,19 @@
 				208023D522AB527000F175A5 /* StoreKit.framework in Frameworks */,
 				356B33DC26D2D582006CDADB /* SwiftyStoreKit in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2038D4D9220EA4F100E8A9FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				3545C5FD2839C2C800989463 /* MASShortcut in Frameworks */,
 				356B33DE26D2D98F006CDADB /* Defaults in Frameworks */,
 				2038D4E2220EA4F100E8A9FE /* Cocoa.framework in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		359951C326D2EB7D004D8C08 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -296,6 +291,7 @@
 				2038D4CE220EA4F000E8A9FE /* AppDelegate.swift */,
 				2038D4D5220EA4F100E8A9FE /* Assets.xcassets */,
 				2038D4D7220EA4F100E8A9FE /* Info.plist */,
+				2066E78F2F32CCA100BAFF88 /* AppIcon.icon */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -377,8 +373,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = "Accelerate Extension";
 			packageProductDependencies = (
 				356B33DD26D2D98F006CDADB /* Defaults */,
@@ -445,7 +439,6 @@
 				};
 			};
 			buildConfigurationList = 2038D4C4220EA4F000E8A9FE /* Build configuration list for PBXProject "Accelerate - macOS" */;
-			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -459,6 +452,7 @@
 				356B33DA26D2D582006CDADB /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				3545C5F92839C2BC00989463 /* XCRemoteSwiftPackageReference "MASShortcut" */,
 			);
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 2038D4CA220EA4F000E8A9FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -473,21 +467,19 @@
 /* Begin PBXResourcesBuildPhase section */
 		2038D4C7220EA4F000E8A9FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				2038D4D6220EA4F100E8A9FE /* Assets.xcassets in Resources */,
 				35D22C0326800343006E23B2 /* ShortcutsViewController.xib in Resources */,
 				35D22C0526800530006E23B2 /* ShortcutViewController.xib in Resources */,
 				351AB4A12690C83D007E429A /* TutorialViewController.xib in Resources */,
 				35B835B02676EAF200C7058C /* MainMenu.xib in Resources */,
+				2066E7912F32CCA100BAFF88 /* AppIcon.icon in Resources */,
 				35B835BE2676EC4600C7058C /* BlocklistViewController.xib in Resources */,
 				35D22BFD26800314006E23B2 /* GeneralViewController.xib in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2038D4DA220EA4F100E8A9FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				3572ACE4283AD7EB00D902A1 /* forward.svg in Resources */,
 				3572AC9F283AB40000D902A1 /* snackbar.css in Resources */,
@@ -502,24 +494,21 @@
 				3572ACE7283ADE4E00D902A1 /* toolbar.pdf in Resources */,
 				3572ACD9283AD7EB00D902A1 /* play.svg in Resources */,
 				3572ACDB283AD7EB00D902A1 /* backward.svg in Resources */,
+				2066E7902F32CCA100BAFF88 /* AppIcon.icon in Resources */,
 				3572ACD5283AD7EB00D902A1 /* skip.svg in Resources */,
 				3572ACD7283AD7EB00D902A1 /* unmute.svg in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		359951C426D2EB7D004D8C08 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2038D4C5220EA4F000E8A9FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				204F7F5C2D7DF46F003FCB7C /* Log.swift in Sources */,
 				204F7F5D2D7DF46F003FCB7C /* Shortcut.swift in Sources */,
@@ -539,11 +528,9 @@
 				2097C59B25DE080500279123 /* ShortcutsViewController.swift in Sources */,
 				358908A6283AE0C900F40CD7 /* Defaults+Shared.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2038D4D8220EA4F100E8A9FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				20BD458A231F0A850009CC82 /* Cocoa+Extensions.swift in Sources */,
 				204980C3227F90BF0031C167 /* Defaults+Keys.swift in Sources */,
@@ -557,16 +544,13 @@
 				2038D4E5220EA4F100E8A9FE /* SafariExtensionHandler.swift in Sources */,
 				358908A9283AE0C900F40CD7 /* Shortcut+Action.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		359951C226D2EB7D004D8C08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				359951D126D2EBD1004D8C08 /* AccelerateShortcutTests.swift in Sources */,
 				359951C926D2EB7D004D8C08 /* AccelerateTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -584,7 +568,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2038D4F1220EA4F100E8A9FE /* Debug */ = {
+		2038D4F1220EA4F100E8A9FE /* Debug configuration for PBXProject "Accelerate - macOS" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -649,7 +633,7 @@
 			};
 			name = Debug;
 		};
-		2038D4F2220EA4F100E8A9FE /* Release */ = {
+		2038D4F2220EA4F100E8A9FE /* Release configuration for PBXProject "Accelerate - macOS" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -707,7 +691,7 @@
 			};
 			name = Release;
 		};
-		2038D4F4220EA4F100E8A9FE /* Debug */ = {
+		2038D4F4220EA4F100E8A9FE /* Debug configuration for PBXNativeTarget "Accelerate Extension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Accelerate Extension/Accelerate_Extension.entitlements";
@@ -733,7 +717,7 @@
 			};
 			name = Debug;
 		};
-		2038D4F5220EA4F100E8A9FE /* Release */ = {
+		2038D4F5220EA4F100E8A9FE /* Release configuration for PBXNativeTarget "Accelerate Extension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Accelerate Extension/Accelerate_Extension.entitlements";
@@ -759,7 +743,7 @@
 			};
 			name = Release;
 		};
-		2038D4F8220EA4F100E8A9FE /* Debug */ = {
+		2038D4F8220EA4F100E8A9FE /* Debug configuration for PBXNativeTarget "Accelerate" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -786,7 +770,7 @@
 			};
 			name = Debug;
 		};
-		2038D4F9220EA4F100E8A9FE /* Release */ = {
+		2038D4F9220EA4F100E8A9FE /* Release configuration for PBXNativeTarget "Accelerate" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -813,7 +797,7 @@
 			};
 			name = Release;
 		};
-		359951CD26D2EB7D004D8C08 /* Debug */ = {
+		359951CD26D2EB7D004D8C08 /* Debug configuration for PBXNativeTarget "AccelerateTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -835,7 +819,7 @@
 			};
 			name = Debug;
 		};
-		359951CE26D2EB7D004D8C08 /* Release */ = {
+		359951CE26D2EB7D004D8C08 /* Release configuration for PBXNativeTarget "AccelerateTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -863,37 +847,33 @@
 		2038D4C4220EA4F000E8A9FE /* Build configuration list for PBXProject "Accelerate - macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2038D4F1220EA4F100E8A9FE /* Debug */,
-				2038D4F2220EA4F100E8A9FE /* Release */,
+				2038D4F1220EA4F100E8A9FE /* Debug configuration for PBXProject "Accelerate - macOS" */,
+				2038D4F2220EA4F100E8A9FE /* Release configuration for PBXProject "Accelerate - macOS" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		2038D4F3220EA4F100E8A9FE /* Build configuration list for PBXNativeTarget "Accelerate Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2038D4F4220EA4F100E8A9FE /* Debug */,
-				2038D4F5220EA4F100E8A9FE /* Release */,
+				2038D4F4220EA4F100E8A9FE /* Debug configuration for PBXNativeTarget "Accelerate Extension" */,
+				2038D4F5220EA4F100E8A9FE /* Release configuration for PBXNativeTarget "Accelerate Extension" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		2038D4F7220EA4F100E8A9FE /* Build configuration list for PBXNativeTarget "Accelerate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2038D4F8220EA4F100E8A9FE /* Debug */,
-				2038D4F9220EA4F100E8A9FE /* Release */,
+				2038D4F8220EA4F100E8A9FE /* Debug configuration for PBXNativeTarget "Accelerate" */,
+				2038D4F9220EA4F100E8A9FE /* Release configuration for PBXNativeTarget "Accelerate" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		359951CF26D2EB7D004D8C08 /* Build configuration list for PBXNativeTarget "AccelerateTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				359951CD26D2EB7D004D8C08 /* Debug */,
-				359951CE26D2EB7D004D8C08 /* Release */,
+				359951CD26D2EB7D004D8C08 /* Debug configuration for PBXNativeTarget "AccelerateTests" */,
+				359951CE26D2EB7D004D8C08 /* Release configuration for PBXNativeTarget "AccelerateTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

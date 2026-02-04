@@ -13,6 +13,8 @@
 		204F7F692D7DF481003FCB7C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F622D7DF481003FCB7C /* Log.swift */; };
 		204F7F6A2D7DF481003FCB7C /* SnackbarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F642D7DF481003FCB7C /* SnackbarLocation.swift */; };
 		204F7F6B2D7DF481003FCB7C /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F7F632D7DF481003FCB7C /* Shortcut.swift */; };
+		2066E7932F32CDA000BAFF88 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2066E7922F32CDA000BAFF88 /* AppIcon.icon */; };
+		2066E7942F32CDA000BAFF88 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2066E7922F32CDA000BAFF88 /* AppIcon.icon */; };
 		3501FCA02754232F007F6622 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3501FC9F2754232F007F6622 /* TutorialView.swift */; };
 		3531AA932835A4F1003521C6 /* TipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AA922835A4F1003521C6 /* TipViewModel.swift */; };
 		3531AA952835A5AB003521C6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3531AA902835A4A6003521C6 /* StoreKit.framework */; };
@@ -95,6 +97,7 @@
 		204F7F622D7DF481003FCB7C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		204F7F632D7DF481003FCB7C /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		204F7F642D7DF481003FCB7C /* SnackbarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarLocation.swift; sourceTree = "<group>"; };
+		2066E7922F32CDA000BAFF88 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = AppIcon.icon; path = ../AppIcon.icon; sourceTree = SOURCE_ROOT; };
 		3501FC9F2754232F007F6622 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		3531AA902835A4A6003521C6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3531AA922835A4F1003521C6 /* TipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewModel.swift; sourceTree = "<group>"; };
@@ -279,6 +282,7 @@
 				353EB0A326D34F4B00ECC91F /* AppDelegate.swift */,
 				353EB0AD26D34F4C00ECC91F /* SceneDelegate.swift */,
 				353EB0B726D34F4C00ECC91F /* Assets.xcassets */,
+				2066E7922F32CDA000BAFF88 /* AppIcon.icon */,
 				353EB0B826D34F4C00ECC91F /* Info.plist */,
 				353EB0A526D34F4C00ECC91F /* Resources */,
 			);
@@ -418,6 +422,7 @@
 				353EB0A826D34F4C00ECC91F /* Main.html in Resources */,
 				353EB0EA26D34F4D00ECC91F /* Assets.xcassets in Resources */,
 				35BC075A2794B75E00B88AC9 /* Icon.png in Resources */,
+				2066E7932F32CDA000BAFF88 /* AppIcon.icon in Resources */,
 				35531844282EAC7D00D2E90A /* alpine.js in Resources */,
 				353EB0AC26D34F4C00ECC91F /* Style.css in Resources */,
 			);
@@ -441,6 +446,7 @@
 				35531845282EAC7D00D2E90A /* alpine.js in Resources */,
 				353EB0E226D34F4D00ECC91F /* inject.js in Resources */,
 				3572ACC3283ACA8400D902A1 /* snackbar.js in Resources */,
+				2066E7942F32CDA000BAFF88 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
