@@ -1,5 +1,8 @@
 # Accelerate
 
+> [!WARNING]
+> Hi all, I'm no longer updating Accelerate. If you're interested in taking over the codebase and the App Store applications, please reach out to me and I'd be happy to discuss transferring privileges. Thanks to everyone who used this extension and supported its development.
+
 [Accelerate](https://ritam.me/projects/accelerate/) is a Safari extension for
 macOS and iOS with powerful, customizable features for controlling video
 playback.
